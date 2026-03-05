@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Singapore Tax Law — Integrated Course & Meridian Case Study</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0c10;--surface:#111419;--card:#161b22;--border:#21262d;
+  --gold:#c9a84c;--gold2:#e8c97a;--gold-dim:#7a5f28;--gold-pale:rgba(201,168,76,0.08);
+  --cream:#f0e8d5;--text:#cdc8be;--muted:#6e6a62;
+  --accent:#4a90a4;--accent2:#7b6fa3;
+  --red:#c44b4b;--red-dim:rgba(196,75,75,0.15);
+  --green:#4a8c6a;--green-dim:rgba(74,140,106,0.12);
+  --blue:#3a7aad;--blue-dim:rgba(58,122,173,0.12);
+  --orange:#c47a2a;--orange-dim:rgba(196,122,42,0.12);
+  --serif:'Lora',Georgia,serif;
+  --display:'Playfair Display',Georgia,serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:15px;line-height:1.75;overflow-x:hidden;}
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--gold-dim);border-radius:3px;}
+
+/* ══ TOPBAR ══ */
+#topbar{position:sticky;top:0;z-index:200;background:rgba(10,12,16,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--gold-dim);height:54px;display:flex;align-items:center;padding:0 20px;gap:16px;}
+.tb-logo{font-family:var(--display);font-size:.95rem;color:var(--gold);white-space:nowrap;margin-right:8px;}
+.tb-logo span{color:var(--cream);}
+.mode-tabs{display:flex;gap:2px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:6px;padding:3px;}
+.mode-tab{font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;padding:5px 14px;border-radius:4px;border:none;cursor:pointer;color:var(--muted);background:none;transition:all .2s;}
+.mode-tab.active{background:var(--gold-dim);color:var(--gold2);}
+.tb-score{margin-left:auto;font-family:var(--mono);font-size:.72rem;color:var(--gold);background:var(--gold-pale);border:1px solid var(--gold-dim);padding:4px 12px;border-radius:4px;white-space:nowrap;}
+.tb-score b{font-size:1rem;}
+
+/* ══ LAYOUT ══ */
+#shell{display:flex;min-height:calc(100vh - 54px);}
+#sidebar{width:210px;flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);height:calc(100vh - 54px);overflow-y:auto;position:sticky;top:54px;}
+#sidebar::-webkit-scrollbar{width:3px;}
+#sidebar::-webkit-scrollbar-thumb{background:var(--gold-dim);}
+#main-content{flex:1;min-width:0;max-width:960px;padding:36px 48px 100px;}
+
+/* ══ SIDEBAR ══ */
+.sb-group{padding:12px 16px 4px;font-family:var(--mono);font-size:.55rem;letter-spacing:.15em;color:var(--gold-dim);text-transform:uppercase;}
+.sb-link{display:flex;align-items:center;gap:8px;padding:6px 16px;font-family:var(--mono);font-size:.67rem;color:var(--muted);text-decoration:none;border-left:2px solid transparent;transition:all .18s;line-height:1.3;}
+.sb-link:hover,.sb-link.active{color:var(--gold);border-left-color:var(--gold);background:var(--gold-pale);}
+.sb-link .sb-icon{font-size:.7rem;opacity:.6;}
+.sb-pill{font-size:.52rem;padding:1px 5px;border-radius:2px;font-family:var(--mono);margin-left:auto;}
+.sb-pill-l{background:rgba(74,144,164,.2);color:#7ec8d8;}
+.sb-pill-c{background:rgba(196,75,75,.2);color:#e08080;}
+.sb-pill-b{background:rgba(201,168,76,.15);color:var(--gold);}
+
+/* ══ SECTION DISPLAY CONTROL ══ */
+.lesson-section,.case-section,.both-section{display:none;}
+body.mode-learn .lesson-section,body.mode-learn .both-section{display:block;}
+body.mode-case .case-section,body.mode-case .both-section{display:block;}
+body.mode-integrate .lesson-section,.integrate-only{display:none;}
+body.mode-integrate .case-section,body.mode-integrate .both-section{display:block;}
+body.mode-integrate .lesson-section{display:block;}
+
+/* ══ HERO ══ */
+.hero{padding:56px 0 44px;border-bottom:1px solid var(--border);margin-bottom:48px;}
+.hero-ey{font-family:var(--mono);font-size:.65rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:14px;}
+.hero h1{font-family:var(--display);font-size:clamp(1.9rem,3.5vw,3.2rem);font-weight:900;color:var(--cream);line-height:1.12;margin-bottom:16px;}
+.hero h1 em{color:var(--gold);font-style:italic;}
+.hero-sub{font-size:.95rem;color:var(--muted);max-width:520px;line-height:1.8;margin-bottom:20px;}
+.bridge-badge{display:inline-flex;align-items:center;gap:8px;background:var(--blue-dim);border:1px solid rgba(58,122,173,.35);border-radius:5px;padding:7px 14px;font-family:var(--mono);font-size:.72rem;color:#7ab8d8;}
+
+/* ══ CONTENT SECTIONS ══ */
+.sec{margin-bottom:60px;scroll-margin-top:70px;}
+.sec-num{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;color:var(--gold);display:block;margin-bottom:6px;}
+.sec h2{font-family:var(--display);font-size:1.7rem;color:var(--cream);margin-bottom:4px;}
+.sec h3{font-family:var(--display);font-size:1.3rem;color:var(--cream);margin-bottom:4px;}
+.sec-rule{width:40px;height:2px;background:var(--gold);margin-bottom:22px;}
+.sec p{margin-bottom:12px;font-size:.95rem;}
+.sec p:last-child{margin-bottom:0;}
+
+/* ══ CROSS-REFERENCE BRIDGES ══ */
+.lesson-bridge{display:flex;align-items:flex-start;gap:12px;background:var(--blue-dim);border:1px solid rgba(58,122,173,.3);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:.84rem;}
+.lesson-bridge .lb-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px;}
+.lesson-bridge strong{color:#7ab8d8;}
+.case-bridge{display:flex;align-items:flex-start;gap:12px;background:var(--orange-dim);border:1px solid rgba(196,122,42,.35);border-radius:6px;padding:14px 16px;margin:16px 0;font-size:.84rem;}
+.case-bridge .cb-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px;}
+.case-bridge strong{color:#e0a060;}
+.case-bridge a{color:#e0a060;text-decoration:none;border-bottom:1px dashed rgba(196,122,42,.5);}
+.case-bridge a:hover{color:var(--gold2);}
+
+/* ══ CARDS & BOXES ══ */
+.card{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:20px 22px;margin-bottom:14px;}
+.card-title{font-family:var(--display);font-size:1rem;color:var(--gold2);margin-bottom:10px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+
+/* ══ PART HEADERS (Case Study) ══ */
+.part-hdr{margin:48px -48px 0;padding:24px 48px;background:linear-gradient(135deg,#0d1520,#111b2a);border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--border);scroll-margin-top:60px;}
+.part-hdr .ph-num{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;color:var(--gold-dim);text-transform:uppercase;margin-bottom:5px;}
+.part-hdr h2{font-family:var(--display);font-size:1.45rem;color:var(--cream);}
+
+/* ══ ISSUE BOXES ══ */
+.issue-wrap{margin-bottom:56px;scroll-margin-top:70px;}
+.issue-hdr{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px;}
+.issue-num-badge{background:var(--gold-dim);color:var(--gold2);font-family:var(--mono);font-size:.65rem;padding:4px 10px;border-radius:3px;letter-spacing:.08em;white-space:nowrap;margin-top:4px;}
+.issue-title{font-family:var(--display);font-size:1.25rem;color:var(--cream);font-weight:700;}
+.issue-sub{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:3px;}
+
+/* ══ TYPED BOXES ══ */
+.box{border-radius:6px;padding:16px 20px;margin:14px 0;font-size:.88rem;}
+.box-title{font-family:var(--display);font-size:.95rem;font-weight:700;margin-bottom:8px;}
+.box p{margin-bottom:8px;font-size:.88rem;}
+.box p:last-child{margin-bottom:0;}
+.box-fact{background:rgba(255,255,255,.03);border:1px solid var(--border);border-left:3px solid #4a6a8a;}
+.box-fact .box-title{color:#7ab8d8;}
+.box-issue{background:var(--red-dim);border:1px solid rgba(196,75,75,.3);border-left:3px solid var(--red);}
+.box-issue .box-title{color:#e08080;}
+.box-issue .box-title::before{content:"⚠ ";}
+.box-analysis{background:var(--blue-dim);border:1px solid rgba(58,122,173,.3);border-left:3px solid var(--blue);}
+.box-analysis .box-title{color:#7ab8d8;}
+.box-analysis .box-title::before{content:"🔍 ";}
+.box-verdict{background:var(--gold-pale);border:1px solid rgba(201,168,76,.3);border:1px solid var(--gold-dim);}
+.box-verdict .box-title{color:var(--gold2);}
+.box-verdict .box-title::before{content:"⚖ ";}
+.box-critical{background:rgba(123,111,163,.08);border:1px solid rgba(123,111,163,.3);border-left:3px solid var(--accent2);}
+.box-critical .box-title{color:#b8addb;font-style:italic;}
+.box-conflict{background:rgba(196,75,75,.05);border:1px solid rgba(196,75,75,.25);border-radius:6px;}
+.box-conflict .box-title{font-family:var(--mono);font-size:.67rem;letter-spacing:.08em;color:var(--red);text-transform:uppercase;}
+.box-unresolved{background:rgba(196,122,42,.06);border:1px solid rgba(196,122,42,.3);border-radius:6px;position:relative;overflow:hidden;}
+.box-unresolved::after{content:'UNRESOLVED';position:absolute;right:-18px;top:14px;background:var(--orange);color:#fff;font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;padding:2px 26px;transform:rotate(15deg);}
+.box-unresolved .box-title{color:var(--orange);}
+
+/* ══ TABLES ══ */
+.tbl{width:100%;border-collapse:collapse;font-size:.82rem;margin:14px 0;}
+.tbl th{background:rgba(201,168,76,.12);color:var(--gold2);font-family:var(--mono);font-size:.62rem;letter-spacing:.07em;padding:8px 12px;text-align:left;border:1px solid var(--border);}
+.tbl td{padding:8px 12px;border:1px solid var(--border);vertical-align:top;}
+.tbl tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.tbl tfoot td{background:var(--gold-pale);font-family:var(--mono);font-size:.8rem;font-weight:600;border-top:2px solid var(--gold-dim);}
+.nc{font-family:var(--mono);font-size:.82rem;text-align:right;}
+.neg{color:#e08080;}.pos{color:#80c49e;}
+
+/* ══ CODE / CALC BOXES ══ */
+.calc{background:#080d14;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:6px;padding:18px 20px;font-family:var(--mono);font-size:.78rem;margin:14px 0;overflow-x:auto;line-height:1.8;}
+.calc .c{color:#4a6070;}.calc .k{color:var(--gold2);}.calc .n{color:#79c0ff;}.calc .op{color:var(--gold);}.calc .fn{color:#7bc8a4;}.calc .res{color:#56d364;}.calc .neg-v{color:#f47174;}.calc .lbl{color:rgba(201,168,76,.7);border-bottom:1px solid rgba(201,168,76,.15);display:block;margin-bottom:5px;padding-bottom:3px;}
+
+/* ══ TAGS ══ */
+.tag{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:2px 7px;border-radius:3px;letter-spacing:.05em;margin:2px;}
+.tag-r{background:rgba(196,75,75,.18);color:#e08080;border:1px solid rgba(196,75,75,.3);}
+.tag-g{background:rgba(74,140,106,.18);color:#80c49e;border:1px solid rgba(74,140,106,.3);}
+.tag-b{background:rgba(58,122,173,.18);color:#7ab8d8;border:1px solid rgba(58,122,173,.3);}
+.tag-gold{background:var(--gold-pale);color:var(--gold);border:1px solid var(--gold-dim);}
+.prov{display:inline;font-family:var(--mono);font-size:.7rem;background:rgba(201,168,76,.1);color:var(--gold2);border:1px solid var(--gold-dim);padding:1px 5px;border-radius:2px;}
+.cite{font-family:var(--serif);font-style:italic;color:#7ab8d8;border-bottom:1px dashed rgba(74,144,164,.4);}
+
+/* ══ PROVISION WATERFALL ══ */
+.wfall{padding:10px 0;}
+.wf-item{display:flex;gap:0;margin-bottom:0;}
+.wf-conn{display:flex;flex-direction:column;align-items:center;width:42px;flex-shrink:0;}
+.wf-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--gold);background:var(--bg);z-index:1;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.55rem;color:var(--gold);font-weight:700;}
+.wf-line{width:2px;flex:1;min-height:18px;background:linear-gradient(to bottom,var(--gold-dim),rgba(122,95,40,.1));}
+.wf-body{flex:1;padding-bottom:20px;}
+.wf-level{font-family:var(--mono);font-size:.58rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;}
+.wf-title{font-family:var(--display);font-size:.92rem;color:var(--cream);margin-bottom:4px;}
+.wf-body p{font-size:.82rem;color:var(--muted);}
+
+/* ══ TABS ══ */
+.tab-row{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:18px;}
+.tab-btn{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);font-family:var(--mono);font-size:.68rem;letter-spacing:.07em;padding:9px 16px;cursor:pointer;transition:all .18s;}
+.tab-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
+.tab-pnl{display:none;}.tab-pnl.active{display:block;}
+
+/* ══ ENTITY TREE ══ */
+.entity-tree{background:#080d14;color:#c9d4e0;border:1px solid rgba(201,168,76,.2);border-radius:6px;padding:20px 24px;font-family:var(--mono);font-size:.78rem;margin:14px 0;line-height:2;}
+.et-name{color:var(--gold2);}.et-type{color:#56d364;}.et-note{color:#6a7a8a;}
+
+/* ══ CALC INPUTS ══ */
+.ci-row{display:flex;align-items:center;gap:10px;margin:7px 0;flex-wrap:wrap;}
+.ci-row label{font-family:var(--mono);font-size:.72rem;color:var(--muted);min-width:180px;}
+.ci-row input,.ci-row select{background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--text);font-family:var(--mono);font-size:.78rem;padding:5px 9px;}
+.ci-row input:focus,.ci-row select:focus{outline:none;border-color:var(--gold-dim);}
+.btn{background:var(--gold-pale);border:1px solid var(--gold-dim);color:var(--gold2);font-family:var(--mono);font-size:.72rem;padding:7px 16px;border-radius:4px;cursor:pointer;letter-spacing:.06em;transition:all .18s;}
+.btn:hover{background:rgba(201,168,76,.2);}
+.calc-out{background:var(--green-dim);border:1px solid rgba(74,140,106,.3);border-radius:4px;padding:10px 14px;font-family:var(--mono);font-size:.8rem;color:#80c49e;margin-top:9px;display:none;}
+
+/* ══ VN COMPARE ══ */
+.vn-bridge-block{background:var(--blue-dim);border:1px solid rgba(58,122,173,.3);border-radius:6px;padding:16px 18px;margin:14px 0;}
+.vn-bridge-block .vn-title{font-family:var(--mono);font-size:.67rem;letter-spacing:.1em;color:#7ab8d8;text-transform:uppercase;margin-bottom:8px;}
+
+/* ══ QUIZ ══ */
+.quiz-wrap{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+.quiz-top{background:rgba(201,168,76,.08);border-bottom:1px solid var(--border);padding:14px 22px;display:flex;align-items:center;justify-content:space-between;}
+.quiz-top-title{font-family:var(--display);font-size:1rem;color:var(--cream);}
+.quiz-stats{display:flex;gap:14px;font-family:var(--mono);font-size:.7rem;color:var(--muted);}
+.quiz-stats span{color:var(--gold2);}
+.qprog{height:3px;background:var(--border);}
+.qprog-fill{height:100%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));transition:width .4s;}
+.q-area{padding:24px 22px;}
+.q-tag-row{display:flex;align-items:center;gap:6px;margin-bottom:10px;}
+.q-diff{font-family:var(--mono);font-size:.58rem;padding:2px 7px;border-radius:3px;}
+.q-source-tag{font-family:var(--mono);font-size:.58rem;padding:2px 7px;border-radius:3px;background:var(--orange-dim);color:var(--orange);border:1px solid rgba(196,122,42,.3);}
+.q-text{font-size:.92rem;color:var(--cream);margin-bottom:16px;line-height:1.7;}
+.opts{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;}
+.opt{background:var(--surface);border:1px solid var(--border);border-radius:5px;padding:11px 14px;cursor:pointer;font-size:.85rem;transition:all .18s;display:flex;align-items:center;gap:10px;}
+.opt:hover:not(:disabled){border-color:var(--gold-dim);background:var(--gold-pale);}
+.opt.correct{border-color:var(--green);background:var(--green-dim);color:#80c49e;}
+.opt.wrong{border-color:var(--red);background:var(--red-dim);color:#e08080;}
+.opt-ltr{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.65rem;flex-shrink:0;}
+.explain{background:var(--blue-dim);border:1px solid rgba(58,122,173,.25);border-radius:5px;padding:12px 15px;font-size:.82rem;display:none;margin-top:6px;}
+.explain strong{color:#7ab8d8;}
+.q-nav{padding:14px 22px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.pts-msg{font-family:var(--mono);font-size:.78rem;display:none;}
+.pts-pos{color:#80c49e;}.pts-neg{color:#e08080;}
+
+/* ══ SCORE MODAL ══ */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:500;display:none;align-items:center;justify-content:center;}
+.modal-bg.show{display:flex;}
+.modal{background:var(--card);border:1px solid var(--gold-dim);border-radius:10px;padding:36px;max-width:400px;width:90%;text-align:center;}
+.modal h2{font-family:var(--display);color:var(--cream);}
+.modal-score{font-family:var(--display);font-size:2.8rem;color:var(--gold);margin:14px 0;}
+.modal p{color:var(--muted);font-size:.88rem;margin:8px 0 18px;}
+
+/* ══ CALENDAR ══ */
+.cal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0;}
+.cal-mon{background:var(--card);border:1px solid var(--border);border-radius:5px;overflow:hidden;}
+.cal-mon-hdr{background:rgba(201,168,76,.1);padding:7px 12px;font-family:var(--mono);font-size:.65rem;color:var(--gold);letter-spacing:.1em;border-bottom:1px solid var(--border);}
+.cal-item{padding:6px 12px;border-bottom:1px solid rgba(33,38,45,.5);font-size:.75rem;}
+.cal-item:last-child{border-bottom:none;}
+.cal-item .cd{font-family:var(--mono);font-size:.6rem;color:var(--gold-dim);}
+.cal-item.urg .cd{color:var(--red);}
+
+/* ══ PROGRESS BAR ══ */
+.prog-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden;margin-bottom:22px;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--gold-dim),var(--gold));border-radius:2px;transition:width .4s;}
+
+/* ══ DIFF COLORS ══ */
+mark.tax{background:rgba(201,168,76,.2);color:var(--gold2);padding:1px 3px;border-radius:2px;}
+mark.bad{background:rgba(196,75,75,.2);color:#e08080;padding:1px 3px;border-radius:2px;}
+mark.ok{background:rgba(74,140,106,.2);color:#80c49e;padding:1px 3px;border-radius:2px;}
+
+@keyframes fadeSlide{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.sec,.issue-wrap{animation:fadeSlide .35s ease both;}
+</style>
+</head>
+<body class="mode-integrate">
+
+<!-- ══ TOPBAR ══ -->
+<div id="topbar">
+  <div class="tb-logo">Lex Fiscalis SG &nbsp;<span>· Integrated Edition</span></div>
+  <div class="mode-tabs">
+    <button class="mode-tab" onclick="setMode('learn')">📚 Learn</button>
+    <button class="mode-tab" onclick="setMode('case')">📁 Case Study</button>
+    <button class="mode-tab active" onclick="setMode('integrate')">🔗 Integrated</button>
+    <button class="mode-tab" onclick="setMode('quiz')">✏ Quiz</button>
+  </div>
+  <div class="tb-score">Score: <b id="gscore">0</b> pts &nbsp;|&nbsp; <span id="gans">0</span> answered</div>
+</div>
+
+<!-- ══ SHELL ══ -->
+<div id="shell">
+
+<!-- ══ SIDEBAR ══ -->
+<nav id="sidebar">
+  <div class="sb-group">Foundations</div>
+  <a href="#hero" class="sb-link active"><span class="sb-icon">◆</span>Overview</a>
+  <a href="#l-reading" class="sb-link"><span class="sb-icon">§</span>How to Read Laws <span class="sb-pill sb-pill-l">L</span></a>
+  <a href="#l-structure" class="sb-link"><span class="sb-icon">§</span>Tax Structure <span class="sb-pill sb-pill-l">L</span></a>
+  <a href="#l-waterfall" class="sb-link"><span class="sb-icon">§</span>Hierarchy & Waterfall <span class="sb-pill sb-pill-l">L</span></a>
+  <a href="#l-conflict" class="sb-link"><span class="sb-icon">§</span>Conflict & Priority <span class="sb-pill sb-pill-l">L</span></a>
+  <a href="#l-calendar" class="sb-link"><span class="sb-icon">§</span>Compliance Calendar <span class="sb-pill sb-pill-l">L</span></a>
+  <a href="#l-math" class="sb-link"><span class="sb-icon">§</span>Tax Mathematics <span class="sb-pill sb-pill-l">L</span></a>
+  <div class="sb-group">Case Study</div>
+  <a href="#cs-structure" class="sb-link"><span class="sb-icon">⬡</span>Meridian Structure <span class="sb-pill sb-pill-c">C</span></a>
+  <div class="sb-group">Part I · Corporate</div>
+  <a href="#i1" class="sb-link"><span class="sb-icon">▸</span>I1: Pioneer vs Pillar 2 <span class="sb-pill sb-pill-c">C</span></a>
+  <a href="#i2" class="sb-link"><span class="sb-icon">▸</span>I2: Capital vs Revenue <span class="sb-pill sb-pill-c">C</span></a>
+  <a href="#i3" class="sb-link"><span class="sb-icon">▸</span>I3: Non-Deductibles <span class="sb-pill sb-pill-c">C</span></a>
+  <a href="#i4" class="sb-link"><span class="sb-icon">▸</span>I4: Mgmt Fees & WHT <span class="sb-pill sb-pill-c">C</span></a>
+  <div class="sb-group">Part II · GST</div>
+  <a href="#i5" class="sb-link"><span class="sb-icon">▸</span>I5: Mixed Supplies <span class="sb-pill sb-pill-c">C</span></a>
+  <a href="#i6" class="sb-link"><span class="sb-icon">▸</span>I6: OVR & Reverse Charge <span class="sb-pill sb-pill-c">C</span></a>
+  <div class="sb-group">Part III · Stamp & Property</div>
+  <a href="#i7" class="sb-link"><span class="sb-icon">▸</span>I7: ABSD 65% <span class="sb-pill sb-pill-c">C</span></a>
+  <a href="#i8" class="sb-link"><span class="sb-icon">▸</span>I8: Annual Value <span class="sb-pill sb-pill-c">C</span></a>
+  <div class="sb-group">Part IV · International</div>
+  <a href="#i9" class="sb-link"><span class="sb-icon">▸</span>I9: Royalty WHT <span class="sb-pill sb-pill-c">C</span></a>
+  <a href="#i10" class="sb-link"><span class="sb-icon">▸</span>I10: Transfer Pricing <span class="sb-pill sb-pill-c">C</span></a>
+  <a href="#i11" class="sb-link"><span class="sb-icon">▸</span>I11: Treaty Shopping <span class="sb-pill sb-pill-c">C</span></a>
+  <div class="sb-group">Part V · Contentious</div>
+  <a href="#i12" class="sb-link"><span class="sb-icon">▸</span>I12: Crypto Treasury <span class="sb-pill sb-pill-c">C</span></a>
+  <a href="#i13" class="sb-link"><span class="sb-icon">▸</span>I13: Gig Workers <span class="sb-pill sb-pill-c">C</span></a>
+  <a href="#i14" class="sb-link"><span class="sb-icon">▸</span>I14: Dividend Strip <span class="sb-pill sb-pill-c">C</span></a>
+  <a href="#i15" class="sb-link"><span class="sb-icon">▸</span>I15: Director Fees <span class="sb-pill sb-pill-c">C</span></a>
+  <div class="sb-group">Synthesis</div>
+  <a href="#consolidated" class="sb-link"><span class="sb-icon">◈</span>Consolidated Workings <span class="sb-pill sb-pill-b">B</span></a>
+  <a href="#vn-compare" class="sb-link"><span class="sb-icon">◈</span>VN ↔ SG Compare <span class="sb-pill sb-pill-l">L</span></a>
+  <a href="#dilemmas" class="sb-link"><span class="sb-icon">◈</span>Unresolved Dilemmas <span class="sb-pill sb-pill-b">B</span></a>
+  <a href="#quiz-sec" class="sb-link"><span class="sb-icon">✎</span>MCQ Assessment <span class="sb-pill sb-pill-b">B</span></a>
+</nav>
+
+<!-- ══ MAIN ══ -->
+<div id="main-content">
+
+<!-- ══════════════ HERO ══════════════ -->
+<div class="sec both-section" id="hero">
+  <p class="hero-ey">Singapore Tax Law · Integrated Course & Case Study · YA 2025</p>
+  <h1 class="hero" style="padding:0;border:none;margin-bottom:0;">
+    <span style="font-family:var(--display);font-size:clamp(1.9rem,3.5vw,3.2rem);font-weight:900;color:var(--cream);line-height:1.12;display:block;margin-bottom:14px;">From <em style="color:var(--gold);font-style:italic;">Principle</em> to<br><em style="color:var(--gold);font-style:italic;">Practice</em></span>
+  </h1>
+  <p style="font-size:.95rem;color:var(--muted);max-width:520px;line-height:1.8;margin-bottom:18px;">Every lesson in this course is directly applied to Meridian Holdings — a fictional Singapore conglomerate whose 15 tax issues span every major tax, every type of conflict, and every unresolved legal question in Singapore tax law as at 2025.</p>
+  <div class="bridge-badge">🇻🇳 Built for professionals with Vietnamese tax foundations — bridging concepts throughout</div>
+  <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+    <div style="background:var(--blue-dim);border:1px solid rgba(58,122,173,.3);border-radius:5px;padding:8px 14px;font-family:var(--mono);font-size:.67rem;color:#7ab8d8;">📚 Lessons — structural knowledge</div>
+    <div style="background:var(--orange-dim);border:1px solid rgba(196,122,42,.35);border-radius:5px;padding:8px 14px;font-family:var(--mono);font-size:.67rem;color:#e0a060;">📁 Case Study — applied to Meridian</div>
+    <div style="background:var(--gold-pale);border:1px solid var(--gold-dim);border-radius:5px;padding:8px 14px;font-family:var(--mono);font-size:.67rem;color:var(--gold);">🔗 Integrated — lesson meets issue</div>
+  </div>
+</div>
+
+<!-- ══════════════ LESSON 01: HOW TO READ ══════════════ -->
+<div class="sec lesson-section" id="l-reading">
+  <span class="sec-num">§ 01 · LESSON</span>
+  <h2>How to Read & Reference Singapore Tax Laws</h2>
+  <div class="sec-rule"></div>
+  <div class="case-bridge"><span class="cb-icon">📁</span><div><strong>Meridian Application:</strong> Every issue in the case study depends on locating the precise statutory provision. Issue 3 (non-deductibles) requires distinguishing <span class="prov">s14(1)(a)</span> from <span class="prov">s15(1)(b)(c)(f)</span>. Issue 1 requires reading <span class="prov">EEI Act s5</span> alongside the <span class="prov">BEPS Act</span>. Issue 14 turns on the exact wording of <span class="prov">s13(1)(za)</span> vs <span class="prov">s33</span>. See: <a href="#i3">Issue 3 →</a> <a href="#i1">Issue 1 →</a></div></div>
+  <div class="grid2">
+    <div class="card"><div class="card-title">📖 Anatomy of a Statute</div>
+      <p style="font-size:.84rem;margin-bottom:10px;">Singapore statutes follow a precise citation hierarchy:</p>
+      <div class="calc"><span class="k">Act</span> → <span class="k">Part</span> → <span class="k">Division</span> → <span class="k">Section (s)</span>
+  → <span class="k">Subsection (ss)</span> → <span class="k">Paragraph (para)</span>
+<span class="c">// Example: ITA s10(1)(a)</span>
+<span class="fn">ITA</span> <span class="op">s</span><span class="n">10</span>(<span class="n">1</span>)(<span class="op">a</span>) = <span class="res">"gains or profits from any trade..."</span></div>
+    </div>
+    <div class="card"><div class="card-title">🔗 Key Acts Quick Reference</div>
+      <table class="tbl">
+        <tr><th>Act</th><th>Cap.</th><th>Primary Tax</th></tr>
+        <tr><td>Income Tax Act 1947</td><td><span class="tag tag-gold">134</span></td><td>Income, CIT, WHT</td></tr>
+        <tr><td>GST Act 1993</td><td><span class="tag tag-b">117A</span></td><td>9% GST</td></tr>
+        <tr><td>Stamp Duties Act 1929</td><td><span class="tag tag-r">312</span></td><td>BSD, ABSD, SSD</td></tr>
+        <tr><td>Property Tax Act 1960</td><td><span class="tag tag-g">254</span></td><td>Annual Value tax</td></tr>
+        <tr><td>EEI Act (Incentives)</td><td><span class="tag tag-gold">86</span></td><td>Pioneer, DEI</td></tr>
+        <tr><td>BEPS (Min. Tax) Act</td><td>—</td><td>15% QDMTT</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="card"><div class="card-title">🔍 The Four-Step Reading Method</div>
+    <div class="tab-row">
+      <button class="tab-btn active" onclick="switchTab(this,'rt','r1')">1: Identify</button>
+      <button class="tab-btn" onclick="switchTab(this,'rt','r2')">2: Charge First</button>
+      <button class="tab-btn" onclick="switchTab(this,'rt','r3')">3: Definitions</button>
+      <button class="tab-btn" onclick="switchTab(this,'rt','r4')">4: Purposive</button>
+    </div>
+    <div id="rt">
+      <div class="tab-pnl active" id="r1"><p style="font-size:.88rem;"><strong style="color:var(--gold2);">Which Act governs?</strong> Income question → ITA. Supply of goods/services → GST Act. Property transfer → SDA. Property ownership → PTA. Read the <em>Arrangement of Sections</em> at the front. Multiple Acts may apply simultaneously to the same transaction — never assume one statute is exhaustive. In Meridian's property disposal (Issue 2), both ITA (income tax on gain) and SDA (Seller's Stamp Duty) apply independently.</p></div>
+      <div class="tab-pnl" id="r2"><p style="font-size:.88rem;"><strong style="color:var(--gold2);">Always read the charging section first.</strong> ITA <span class="prov">s10(1)</span> — the eight heads of taxable income. Only after understanding the charge should you look for exemptions (<span class="prov">s13</span>) and deductions (<span class="prov">s14</span>). The default position is: <em>income is taxable unless exempt; expenses are non-deductible unless specifically allowed.</em> This asymmetry is fundamental — and the opposite of how most taxpayers naturally think.</p></div>
+      <div class="tab-pnl" id="r3"><p style="font-size:.88rem;"><strong style="color:var(--gold2);">Check definitions before the provision.</strong> <span class="prov">ITA s2</span> defines "resident", "trade", "person", "chargeable income". "Resident" in ITA differs from "resident" in a DTA. A key error in the Meridian case: assuming "technical fees" under the Singapore-Vietnam DTA has the same meaning as "management fees" under domestic ITA. Always check: does this word have a statutory definition or a treaty-specific definition?</p></div>
+      <div class="tab-pnl" id="r4"><p style="font-size:.88rem;"><strong style="color:var(--gold2);">Apply the purposive approach (<span class="prov">Interpretation Act s9A</span>).</strong> Singapore courts read statutes to fulfil Parliament's intent, not just the literal text. The dividend stripping issue (Issue 14) turns entirely on whether s13(1)(za)'s purpose was to exempt all one-tier dividends, or only <em>genuine</em> dividend distributions. The <span class="cite">CIT v AQQ [2014] SGCA</span> GAAR case is the landmark application of purposive construction in tax.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ LESSON 02: TAX STRUCTURE ══════════════ -->
+<div class="sec lesson-section" id="l-structure">
+  <span class="sec-num">§ 02 · LESSON</span>
+  <h2>Singapore Tax Structure — All Taxes at a Glance</h2>
+  <div class="sec-rule"></div>
+  <div class="vn-bridge-block"><div class="vn-title">🇻🇳 VN Bridge — Territorial vs Worldwide</div><p style="font-size:.84rem;">Vietnam taxes residents on worldwide income. Singapore is <strong>strictly territorial</strong> — only income accruing in or derived from Singapore, or received in Singapore from abroad, is taxable under <span class="prov">ITA s10(1)</span>. There is <em>no capital gains tax, no inheritance tax, no dividend withholding tax</em> in Singapore. This creates massive planning opportunities — and the GAAR (s33) exists precisely to prevent abuse of these gaps.</p></div>
+  <div class="case-bridge"><span class="cb-icon">📁</span><div><strong>Meridian Application:</strong> The territorial principle directly determines Issues 2 (property gain), 9 (royalty WHT), 10 (loan interest), 11 (treaty shopping), 12 (crypto gains). All five issues turn on whether income has a Singapore source or whether Singapore can tax a foreign receipt. <a href="#i2">Issue 2 →</a> <a href="#i9">Issue 9 →</a> <a href="#i11">Issue 11 →</a></div></div>
+  <div class="grid3">
+    <div class="card"><div class="card-title">🏢 CIT</div><p style="font-size:.82rem;"><strong style="color:var(--gold2);">17% flat</strong> (since YA 2010)<br>Pioneer: 0–10% under EEI Act<br>Partial exemption: <span class="prov">s43C</span><br>Startup exemption: <span class="prov">s43(6A)</span><br>Base: Chargeable Income</p></div>
+    <div class="card"><div class="card-title">👤 PIT</div><p style="font-size:.82rem;"><strong style="color:var(--gold2);">Progressive to 22%</strong><br>Resident: <span class="prov">s43</span> rates<br>Non-resident: flat 22%<br>Key reliefs: <span class="prov">s39</span><br>CPF deductible: <span class="prov">s39(2)(g)</span></p></div>
+    <div class="card"><div class="card-title">🛒 GST</div><p style="font-size:.82rem;"><strong style="color:var(--gold2);">9%</strong> since 1 Jan 2024<br>Threshold: S$1M turnover<br>Zero-rated: exports, intl services<br>Exempt: financial, residential<br>Partial exemption: <span class="prov">s26</span></p></div>
+    <div class="card"><div class="card-title">🏠 Stamp Duty</div><p style="font-size:.82rem;"><strong style="color:var(--gold2);">BSD</strong>: 1–6% progressive<br><strong style="color:var(--gold2);">ABSD</strong>: 0–65% (entity: 65%)<br><strong style="color:var(--gold2);">SSD</strong>: up to 15% if sold &lt;3yr<br><span class="prov">SDA s22A–22C</span></p></div>
+    <div class="card"><div class="card-title">🏘 Property Tax</div><p style="font-size:.82rem;">Based on <strong style="color:var(--gold2);">Annual Value (AV)</strong><br>Commercial: flat 10%<br>Owner-occ residential: 0–32%<br>Non-owner resi: 12–36%<br><span class="prov">PTA s6, s20</span></p></div>
+    <div class="card"><div class="card-title">🌍 WHT</div><p style="font-size:.82rem;">Non-resident payments:<br>Royalties: <strong style="color:var(--gold2);">10%</strong><br>Interest: <strong style="color:var(--gold2);">15%</strong><br>Technical fees: <strong style="color:var(--gold2);">17%</strong><br>Director fees: <strong style="color:var(--gold2);">22%</strong><br><span class="prov">ITA s45</span></p></div>
+  </div>
+</div>
+
+<!-- ══════════════ LESSON 03: WATERFALL ══════════════ -->
+<div class="sec lesson-section" id="l-waterfall">
+  <span class="sec-num">§ 03 · LESSON</span>
+  <h2>Legal Hierarchy — The Waterfall of Authority</h2>
+  <div class="sec-rule"></div>
+  <div class="case-bridge"><span class="cb-icon">📁</span><div><strong>Meridian Application:</strong> The waterfall is essential for resolving Issue 1 (BEPS Act vs EEI Act — which is higher authority?), Issue 9 (DTA Art. 12 vs domestic <span class="prov">s45</span> WHT rate), and Issue 11 (MLI PPT vs bilateral DTA). The answer to each conflict requires first establishing <em>where each instrument sits in the waterfall</em>. <a href="#i1">Issue 1 →</a> <a href="#i9">Issue 9 →</a> <a href="#i11">Issue 11 →</a></div></div>
+  <div class="wfall">
+    <div class="wf-item"><div class="wf-conn"><div class="wf-dot">1</div><div class="wf-line"></div></div><div class="wf-body"><div class="wf-level">APEX</div><div class="wf-title">Constitution of Singapore</div><p>Art. 89: Parliament has plenary taxing power. Art. 12: equal treatment. No tax can violate fundamental liberties. In Meridian, an argument that the BEPS Act unconstitutionally impairs the Pioneer certificate would need to overcome Art. 89's breadth — a near-impossible task.</p></div></div>
+    <div class="wf-item"><div class="wf-conn"><div class="wf-dot">2</div><div class="wf-line"></div></div><div class="wf-body"><div class="wf-level">INTERNATIONAL</div><div class="wf-title">Double Tax Agreements (DTAs) & MLI</div><p>Singapore's 100+ DTAs are given effect via <span class="prov">ITA s49</span>. DTAs <em>relieve</em> domestic tax charges but cannot <em>create</em> them. The MLI (BEPS Multilateral Instrument) modifies bilateral DTAs — its Principal Purpose Test (Art. 7) can deny treaty benefits if tax was a principal purpose of the arrangement. Meridian Issues 9 and 11 both turn on the MLI PPT.</p></div></div>
+    <div class="wf-item"><div class="wf-conn"><div class="wf-dot">3</div><div class="wf-line"></div></div><div class="wf-body"><div class="wf-level">PRIMARY</div><div class="wf-title">Acts of Parliament (Tax Statutes)</div><p>ITA, GST Act, SDA, PTA, EEI Act, BEPS Act. Lex specialis (specific) prevails over lex generalis (general). Lex posterior (later Act) generally prevails when two Acts conflict equally. <span class="prov">ITA s5</span> explicitly states ITA is subject to EEI Act — statutory cross-referencing. The BEPS Act (2024) is a new, separate Act — not an amendment of EEI Act.</p></div></div>
+    <div class="wf-item"><div class="wf-conn"><div class="wf-dot">4</div><div class="wf-line"></div></div><div class="wf-body"><div class="wf-level">SUBSIDIARY</div><div class="wf-title">Regulations, Rules & Orders</div><p>Made under parent Act powers. Must not exceed the parent Act scope (ultra vires = void). Examples: Income Tax (Exemption) Orders, GST (General) Regulations, ABSD Remission Rules. Must be read with the parent Act — they qualify but cannot contradict.</p></div></div>
+    <div class="wf-item"><div class="wf-conn"><div class="wf-dot">5</div><div class="wf-line"></div></div><div class="wf-body"><div class="wf-level">ADMINISTRATIVE</div><div class="wf-title">IRAS e-Tax Guides, Circulars & Advance Rulings</div><p>Not legally binding on courts, but IRAS is bound by its own guidance via legitimate expectation. Advance rulings (<span class="prov">ITA s108</span>) are binding on IRAS for stated transactions. The Meridian crypto issue (Issue 12) has no e-Tax Guide covering DeFi — highlighting the danger of operating in guidance gaps.</p></div></div>
+    <div class="wf-item"><div class="wf-conn"><div class="wf-dot">6</div><div class="wf-line" style="background:transparent;"></div></div><div class="wf-body"><div class="wf-level">INTERPRETIVE</div><div class="wf-title">Case Law — ITBR, High Court, Court of Appeal</div><p>ITBR decisions are persuasive. High Court and Court of Appeal are binding. Key cases from Meridian: <span class="cite">CIT v AQQ [2014] SGCA</span> (GAAR counterfactual), <span class="cite">BFC v CIT [2013] SGCA</span> (source of income), <span class="cite">AQP v CIT [2013] SGITBR</span> (trading vs capital).</p></div></div>
+  </div>
+</div>
+
+<!-- ══════════════ LESSON 04: CONFLICT ══════════════ -->
+<div class="sec lesson-section" id="l-conflict">
+  <span class="sec-num">§ 04 · LESSON</span>
+  <h2>Conflict, Overlap & Priority Rules</h2>
+  <div class="sec-rule"></div>
+  <div class="case-bridge"><span class="cb-icon">📁</span><div><strong>Meridian Application:</strong> Every one of Meridian's 15 issues involves a conflict between provisions. The most consequential: s14 vs s15 (Issue 3), BEPS Act vs EEI Act (Issue 1), s13(1)(za) vs s33 (Issue 14), DTA Art. 12 vs MLI PPT (Issue 9), ITA s10(1)(a)/(b) vs PWA 2024 (Issue 13). The resolution methodology below is your toolkit for all 15. <a href="#i3">I3</a> · <a href="#i1">I1</a> · <a href="#i14">I14</a> · <a href="#i9">I9</a> · <a href="#i13">I13</a></div></div>
+  <div class="tab-row"><button class="tab-btn active" onclick="switchTab(this,'ct','ct1')">Within ITA</button><button class="tab-btn" onclick="switchTab(this,'ct','ct2')">ITA ↔ GST</button><button class="tab-btn" onclick="switchTab(this,'ct','ct3')">Tax ↔ DTA</button><button class="tab-btn" onclick="switchTab(this,'ct','ct4')">GAAR</button><button class="tab-btn" onclick="switchTab(this,'ct','ct5')">Multi-Act</button></div>
+  <div id="ct">
+    <div class="tab-pnl active" id="ct1">
+      <div class="box box-conflict"><div class="box-title">s14(1)(a) vs s15(1)(b)(c)(f) — Deductibility Battlefield</div><p>s14 grants deductions for expenses "wholly and exclusively" incurred in producing income. s15 <em>prohibits</em> specific categories regardless of s14. <strong>Resolution: s15 always wins.</strong> The "notwithstanding" structure of s15 makes it a trump card. In Meridian Issue 3, every single disputed expense is caught by s15 — entertainment (b), fines (f), goodwill (c), IPO costs (c), club membership (b). <mark class="bad">Non-deductible: S$2,017,500</mark></p></div>
+      <div class="box box-conflict" style="margin-top:10px;"><div class="box-title">s10(1) (Charge) vs s13 (Exemption) — Default Position</div><p>The charge under s10(1) applies by default. Exemptions under s13 must be <em>claimed</em> and <em>proven</em>. Exemptions are read narrowly — the taxpayer bears the burden. In Issue 14, s13(1)(za) dividend exemption is a specific exemption that Meridian must prove applies; IRAS can challenge it under s33 GAAR.</p></div>
+    </div>
+    <div class="tab-pnl" id="ct2">
+      <div class="box box-conflict"><div class="box-title">ITA deductibility ≠ GST input tax recovery — Independent Regimes</div><p>The same expense may be ITA-deductible but GST-blocked (e.g., entertainment: ITA non-deductible AND GST input blocked under Fourth Schedule para 1(e)). Or GST-recoverable but ITA non-deductible (e.g., capital expenditure on plant — ITA disallows but capital allowances apply; GST input fully recoverable). Compute each independently. In Issue 3/5, the gala dinner fails both tests via different statutory paths — illustrating "convergent denial."</p></div>
+    </div>
+    <div class="tab-pnl" id="ct3">
+      <div class="box box-conflict"><div class="box-title">DTA Art. 12 (Royalties) vs ITA s45 WHT Rate</div><p>Domestic rate (s45): 10% on royalties to non-residents. DTA reduced rate: 8% (Singapore-UK). The DTA relief is available only if (i) the recipient is a tax resident of the other contracting state, AND (ii) the recipient is the beneficial owner of the royalties. In Meridian Issue 9, Meridian UK may not be the beneficial owner — making the 8% rate unavailable and the domestic 10% applicable. The MLI PPT test provides an additional layer of challenge.</p></div>
+    </div>
+    <div class="tab-pnl" id="ct4">
+      <div class="box box-conflict"><div class="box-title">ITA s33 GAAR — The Override That Knows No Limits</div><p>s33 allows IRAS to disregard, vary, or counteract any arrangement that has the effect of reducing, avoiding, or deferring tax, where the arrangement would not have been entered into but for the tax benefit (counterfactual test from <span class="cite">CIT v AQQ</span>). s33 can override: specific exemptions (s13), specific deductions (s14), treaty benefits (s49 — controversial), incentive rates (EEI Act). In Meridian, Issues 11 (treaty shopping) and 14 (dividend strip) are both potential s33 targets.</p></div>
+    </div>
+    <div class="tab-pnl" id="ct5">
+      <div class="box box-conflict"><div class="box-title">ITA vs Companies Act / PWA / CPF Act — Cross-Statute Conflicts</div><p>Each statute applies independently within its own domain. A payment classified as a "return of capital" under Companies Act can still be income under ITA. A worker classified as a "platform worker" under PWA 2024 (MOM) is still either s10(1)(a) or s10(1)(b) income for ITA. The CPF Act imposes contribution obligations that the ITA s14(1)(c) deductibility provision may not accommodate if the worker isn't legally an "employee." Meridian Issue 13 sits exactly in this cross-statute gap.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ LESSON 05: CALENDAR ══════════════ -->
+<div class="sec lesson-section" id="l-calendar">
+  <span class="sec-num">§ 05 · LESSON</span>
+  <h2>Singapore Tax Compliance Calendar</h2>
+  <div class="sec-rule"></div>
+  <div class="case-bridge"><span class="cb-icon">📁</span><div><strong>Meridian Application:</strong> Meridian's compliance failures are calendar failures. The director fees WHT (Issue 15) should have been withheld and remitted within 30 days of payment. The Vietnam management fee WHT (Issue 4) — same. ECI filing for Meridian's December year-end is due by 31 March. Missing these deadlines triggers <span class="prov">ITA s94</span> penalties (5% surcharge) and <span class="prov">s45(4)</span> WHT surcharges. <a href="#i4">Issue 4 →</a> <a href="#i15">Issue 15 →</a></div></div>
+  <div class="cal-grid">
+    <div class="cal-mon"><div class="cal-mon-hdr">JAN–FEB</div>
+      <div class="cal-item"><div class="cd">15 Jan</div>GST F5 (quarterly Oct–Dec)</div>
+      <div class="cal-item urg"><div class="cd">28 Feb</div>IR8A/IR8E — employer AIS submission</div>
+      <div class="cal-item urg"><div class="cd">28 Feb</div>s45 WHT return — non-resident payments</div>
+    </div>
+    <div class="cal-mon"><div class="cal-mon-hdr">MAR–APR</div>
+      <div class="cal-item urg"><div class="cd">31 Mar</div>ECI — Dec year-end companies (3mo window)</div>
+      <div class="cal-item"><div class="cd">18 Apr</div>Personal IT e-filing deadline (myTax Portal)</div>
+      <div class="cal-item"><div class="cd">15 Mar</div>GST F5 monthly filers</div>
+    </div>
+    <div class="cal-mon"><div class="cal-mon-hdr">MAY–JUN</div>
+      <div class="cal-item"><div class="cd">15 May</div>GST F5 (quarterly Jan–Mar)</div>
+      <div class="cal-item urg"><div class="cd">30 Jun</div>Form C/C-S — Dec year-end (electronic)</div>
+      <div class="cal-item"><div class="cd">30 Jun</div>Respond to IRAS queries (1-month window)</div>
+    </div>
+    <div class="cal-mon"><div class="cal-mon-hdr">JUL–SEP</div>
+      <div class="cal-item"><div class="cd">15 Aug</div>GST F5 (quarterly Apr–Jun)</div>
+      <div class="cal-item urg"><div class="cd">30 Sep</div>Form C (full) — Dec year-end (paper)</div>
+    </div>
+    <div class="cal-mon"><div class="cal-mon-hdr">OCT–DEC</div>
+      <div class="cal-item"><div class="cd">15 Oct</div>GST F5 (quarterly Jul–Sep)</div>
+      <div class="cal-item urg"><div class="cd">31 Oct</div>ECI — Sep year-end companies</div>
+      <div class="cal-item"><div class="cd">30 Nov</div>Form C/C-S — Sep year-end</div>
+    </div>
+    <div class="cal-mon"><div class="cal-mon-hdr">Key Deadlines</div>
+      <div class="cal-item urg"><div class="cd">30-day rule</div>WHT must be remitted within 30 days of payment</div>
+      <div class="cal-item urg"><div class="cd">3-month</div>ECI due within 3 months of FYE</div>
+      <div class="cal-item"><div class="cd">ITA s94</div>Late: 5% surcharge + arrears</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ LESSON 06: MATH ══════════════ -->
+<div class="sec lesson-section" id="l-math">
+  <span class="sec-num">§ 06 · LESSON</span>
+  <h2>Tax Mathematics — Operators, MAX/MIN/CEILING/FLOOR</h2>
+  <div class="sec-rule"></div>
+  <div class="case-bridge"><span class="cb-icon">📁</span><div><strong>Meridian Application:</strong> The calculators below reproduce exact computations from the Meridian case study. Issue 5 uses CEILING() for GST ratio rounding. Issue 7 uses MAX() for stamp duty basis. Issue 1 uses MAX(15%−ETR, 0) for QDMTT. Issue 2 uses progressive rates. Try the calculators with Meridian's actual numbers. <a href="#i5">Issue 5 →</a> <a href="#i7">Issue 7 →</a> <a href="#i1">Issue 1 →</a></div></div>
+  <div class="grid2">
+    <div class="card"><div class="card-title">Calculator: Corporate Income Tax</div>
+      <div class="calc"><span class="lbl">// ITA s43 — Partial Exemption (Normal Co.)</span>
+<span class="fn">Ex1</span> = <span class="fn">MIN</span>(<span class="k">CI</span>, <span class="n">10,000</span>) <span class="op">×</span> <span class="n">75%</span>
+<span class="fn">Ex2</span> = <span class="fn">MIN</span>(<span class="fn">MAX</span>(<span class="k">CI</span><span class="op">-</span><span class="n">10K</span>,<span class="n">0</span>), <span class="n">190,000</span>) <span class="op">×</span> <span class="n">50%</span>
+<span class="fn">Tax</span> = (<span class="k">CI</span> <span class="op">-</span> <span class="fn">Ex1</span> <span class="op">-</span> <span class="fn">Ex2</span>) <span class="op">×</span> <span class="n">17%</span></div>
+      <div class="ci-row"><label>Chargeable Income (S$)</label><input type="number" id="c_ci" value="500000"></div>
+      <div class="ci-row"><label>Entity type</label><select id="c_type"><option value="normal">Normal (partial exemption)</option><option value="startup">Startup (75% first 100K)</option><option value="pioneer">Pioneer / Incentive</option></select></div>
+      <div class="ci-row" id="c_rate_row" style="display:none;"><label>Incentive rate (%)</label><input type="number" id="c_rate" value="10" min="0" max="17"></div>
+      <button class="btn" onclick="calcCIT()" style="margin-top:8px;">Calculate →</button>
+      <div class="calc-out" id="c_out"></div>
+    </div>
+    <div class="card"><div class="card-title">Calculator: GST Mixed Supply Recovery</div>
+      <div class="calc"><span class="lbl">// GST Act s26 — Input Tax Apportionment</span>
+<span class="fn">Ratio</span> = <span class="fn">CEILING</span>(<span class="k">Taxable</span><span class="op">/</span><span class="k">Total</span> <span class="op">×</span> <span class="n">100</span>, <span class="n">1</span>) <span class="op">/</span> <span class="n">100</span>
+<span class="fn">DM</span>    = <span class="fn">MIN</span>(<span class="n">5%</span><span class="op">×</span><span class="k">TotalIT</span>, <span class="n">S$12K/yr</span>)</div>
+      <div class="ci-row"><label>Total Input Tax (S$)</label><input type="number" id="g_it" value="620000"></div>
+      <div class="ci-row"><label>Taxable Supply Revenue</label><input type="number" id="g_tx" value="8000000"></div>
+      <div class="ci-row"><label>Total Supply Revenue</label><input type="number" id="g_tot" value="15700000"></div>
+      <button class="btn" onclick="calcGST()" style="margin-top:8px;">Calculate →</button>
+      <div class="calc-out" id="g_out"></div>
+    </div>
+  </div>
+  <div class="grid2" style="margin-top:14px;">
+    <div class="card"><div class="card-title">Calculator: Stamp Duty (BSD + ABSD)</div>
+      <div class="ci-row"><label>Purchase Price (S$)</label><input type="number" id="s_price" value="3800000"></div>
+      <div class="ci-row"><label>Market Value (S$)</label><input type="number" id="s_mv" value="3850000"></div>
+      <div class="ci-row"><label>Buyer Type</label><select id="s_buyer"><option value="sc1">SC — 1st Property</option><option value="sc2">SC — 2nd</option><option value="sc3">SC — 3rd+</option><option value="spr1">SPR — 1st</option><option value="spr2">SPR — 2nd</option><option value="fg">Foreigner</option><option value="entity" selected>Corporate Entity</option></select></div>
+      <button class="btn" onclick="calcSD()" style="margin-top:8px;">Calculate →</button>
+      <div class="calc-out" id="s_out"></div>
+    </div>
+    <div class="card"><div class="card-title">Calculator: QDMTT Pillar Two Top-Up</div>
+      <div class="calc"><span class="lbl">// BEPS Act — QDMTT Computation</span>
+<span class="fn">ETR</span>     = <span class="k">CoveredTax</span> <span class="op">/</span> <span class="k">GloBEIncome</span>
+<span class="fn">TopUp%</span>  = <span class="fn">MAX</span>(<span class="n">15%</span> <span class="op">-</span> <span class="fn">ETR</span>, <span class="n">0</span>)
+<span class="fn">QDMTT</span>   = <span class="k">GloBEIncome</span> <span class="op">×</span> <span class="fn">TopUp%</span></div>
+      <div class="ci-row"><label>GloBE Income (S$)</label><input type="number" id="p_income" value="18000000"></div>
+      <div class="ci-row"><label>Covered Tax Paid (S$)</label><input type="number" id="p_tax" value="1800000"></div>
+      <button class="btn" onclick="calcQDMTT()" style="margin-top:8px;">Calculate →</button>
+      <div class="calc-out" id="p_out"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CASE STUDY STRUCTURE ══════════════ -->
+<div class="sec case-section" id="cs-structure">
+  <span class="sec-num">§ CASE STUDY · Background</span>
+  <h2>The Meridian Group — Structure & Key Transactions</h2>
+  <div class="sec-rule"></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> Understanding the group structure applies <strong>§01 (statute identification)</strong> — each entity triggers different Acts. The Singapore HoldCo → ITA + EEI Act. The property subsidiary → SDA + PTA + ITA. The FinTech → GST Act + ITA. Gig platform → CPF Act + ITA. Identifying which Act governs each entity is the first analytical step.</div></div>
+  <div class="entity-tree">
+<span class="et-name">MERIDIAN HOLDINGS PTE. LTD.</span> <span class="et-type">[Singapore HoldCo]</span>
+<span class="et-note">│  Pioneer Status: EEI Act s5 — 10% rate on qualifying FinTech income until 31 Dec 2026</span>
+<span class="et-note">│  Issues: 1 (Pillar 2), 2 (property), 3 (non-deductibles), 4 (mgmt fee), 11 (treaty), 14 (div strip)</span>
+│
+├── <span class="et-name">MERIDIAN PROPCO PTE. LTD.</span> <span class="et-type">[100%]</span> <span class="et-note">→ Issues: 5, 7, 8</span>
+│   <span class="et-note">GST-registered | Commercial + residential properties | Mixed supplies</span>
+│
+├── <span class="et-name">MERIDIAN FINTECH PTE. LTD.</span> <span class="et-type">[100%]</span> <span class="et-note">→ Issues: 5, 6, 9</span>
+│   <span class="et-note">MAS-licensed payment institution | SaaS + exempt financial services + DPT</span>
+│
+├── <span class="et-name">MERIDIAN GIG PTE. LTD.</span> <span class="et-type">[100%]</span> <span class="et-note">→ Issue: 13</span>
+│   <span class="et-note">3,200 platform workers | S$8.4M commissions paid in FY2024</span>
+│
+├── <span class="et-name">MERIDIAN CRYPTO TREASURY PTE. LTD.</span> <span class="et-type">[100%]</span> <span class="et-note">→ Issue: 12</span>
+│   <span class="et-note">BTC, ETH, USDC, DeFi positions | S$2.3M crypto gains + S$180K DeFi yield</span>
+│
+├── <span class="et-name">MERIDIAN VIETNAM CO., LTD.</span> <span class="et-type">[100% — Vietnam]</span> <span class="et-note">→ Issues: 4, 10</span>
+│   <span class="et-note">HCMC-registered | Charges S$480K management fee to SG parent | Receives S$10M loan</span>
+│
+└── <span class="et-name">MERIDIAN UK HOLDINGS LTD.</span> <span class="et-type">[100% — United Kingdom]</span> <span class="et-note">→ Issue: 9, 11</span>
+    <span class="et-note">IP holding company | Receives S$1.8M royalties from Meridian Fintech | No UK substance</span>
+  </div>
+  <div class="box box-fact"><div class="box-title">Key Personnel</div>
+    <table class="tbl">
+      <tr><th>Person</th><th>Role</th><th>Tax Status</th><th>Remuneration / Tax Issue</th></tr>
+      <tr><td>Marcus Tan Wei Liang</td><td>CEO, Meridian Holdings</td><td>Singapore Citizen</td><td>S$500K salary+bonus | Spouse travel S$28K non-deductible (Issue 3)</td></tr>
+      <tr><td>Isabelle Fontaine</td><td>CFO — Non-Executive Director</td><td>French national, non-resident</td><td>S$120K director fees | WHT 22% = S$26,400 NOT withheld (Issue 15)</td></tr>
+      <tr><td>Nguyen Thi Bich Linh</td><td>Head of Vietnam Ops</td><td>Vietnam resident</td><td>VND 3.6B from Vietnam entity (DTA Art. 15 analysis)</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════ PART I HEADER ══════════════ -->
+<div class="part-hdr case-section" id="partI">
+  <div class="ph-num">PART I · CORPORATE INCOME TAX</div>
+  <h2>Issues 1–4: CIT, Pioneer Status, Non-Deductibles & Management Fees</h2>
+</div>
+
+<!-- ══════════════ ISSUE 1 ══════════════ -->
+<div class="issue-wrap case-section" id="i1">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 01 · CIT</span><div><div class="issue-title">Pioneer Status 10% vs BEPS Pillar Two 15% — The Existential Conflict</div><div class="issue-sub">ITA s10(1) · EEI Act s5 · BEPS (Min Tax) Act 2024 · OECD GloBE Rules</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This issue applies <strong>§03 Waterfall</strong> (which Act prevails — EEI Act vs BEPS Act?) and <strong>§04 Conflict</strong> (lex posterior — later Act generally prevails). The BEPS Act (2024) sits at the same level as EEI Act (Cap. 86) — both are Acts of Parliament. The resolution requires examining whether the BEPS Act impliedly amends the EEI Act or operates as a parallel mechanism.</div></div>
+  <div class="box box-fact"><div class="box-title">Facts</div><p>Meridian Holdings holds a Pioneer Status certificate under <span class="prov">EEI Act s5</span> — 10% CIT rate on qualifying FinTech income until 31 Dec 2026. FY 2024 qualifying income: S$18,000,000. Meridian's ultimate parent (Cayman Islands) has consolidated group revenue >€750M — bringing Meridian within BEPS Pillar Two scope. Singapore enacted the <strong>Multinational Enterprise (Minimum Tax) Act 2024</strong> effective 1 Jan 2025.</p></div>
+  <div class="box box-issue"><div class="box-title">The Core Conflict</div><p>Pioneer rate = 10%. Pillar Two minimum = 15%. The QDMTT top-up tax bridges the gap. But does this retroactively nullify the Pioneer commitment? Can Meridian challenge the top-up on constitutional grounds?</p></div>
+  <div class="calc"><span class="lbl">// QDMTT COMPUTATION — Meridian Holdings FY 2024 (ITA s43 + BEPS Act)</span>
+<span class="k">GloBE_Income</span>        = <span class="n">18,000,000</span>
+<span class="k">CIT_At_Pioneer</span>      = <span class="n">18,000,000</span> <span class="op">×</span> <span class="n">10%</span>    = <span class="n">1,800,000</span>
+<span class="k">ETR</span>                 = <span class="n">1,800,000</span> <span class="op">/</span> <span class="n">18,000,000</span> = <span class="res">10.00%</span>
+<span class="k">Top_Up_Pct</span>          = <span class="fn">MAX</span>(<span class="n">15%</span> <span class="op">-</span> <span class="n">10%</span>, <span class="n">0</span>)   = <span class="res">5%</span>
+<span class="k">QDMTT</span>               = <span class="n">18,000,000</span> <span class="op">×</span> <span class="n">5%</span>     = <span class="res">S$900,000</span>
+<span class="k">Total_Tax</span>           = <span class="n">1,800,000</span> <span class="op">+</span> <span class="n">900,000</span>  = <span class="res">S$2,700,000</span>  <span class="c">// effective 15%</span>
+<span class="c">// SBIE (Substance-Based Income Exclusion) may reduce GloBE Income</span>
+<span class="c">// = 5% × payroll costs + 5% × tangible assets (reduces QDMTT base)</span></div>
+  <div class="box box-analysis"><div class="box-title">Analysis — BEPS Act vs EEI Act: Does the Top-Up Breach Pioneer Commitments?</div>
+    <p><strong>Taxpayer's argument:</strong> Parliament cannot unilaterally amend the Pioneer certificate mid-stream. The QDMTT effectively raises Meridian's Singapore tax burden from 10% to 15% — a de facto revocation of the agreed incentive rate. Legitimate expectation doctrine: Meridian relied on the 10% rate when making investment decisions in 2022.</p>
+    <p><strong>IRAS/Government argument:</strong> Parliament's Art. 89 taxing power is plenary. The Pioneer certificate remains valid — Meridian still pays 10% CIT under ITA. The QDMTT is a separate, additional mechanism enacted by a later statute. <span class="prov">ITA s5</span> says ITA is subject to EEI Act, but does not say EEI Act overrides all future tax statutes. The BEPS Act is not an amendment of ITA or EEI Act.</p></div>
+  <div class="box box-unresolved"><div class="box-title">Refundable Investment Credit (RIC) — Partial Mitigation</div><p>Singapore introduced the RIC (Budget 2024) to partially compensate Pioneer holders. But RIC is a future investment subsidy, not a refund of lost incentive value. Its adequacy depends on Meridian's future qualifying capex — creating profound planning uncertainty. No case law, no advance ruling framework. <strong>Singapore's single most significant unresolved corporate tax issue in 2025.</strong></p></div>
+  <div class="box box-verdict"><div class="box-title">Tax Position Summary</div><p>CIT at 10% (Pioneer): <mark class="tax">S$1,800,000</mark> · QDMTT top-up: <mark class="tax">S$900,000</mark> · Total Issue 1: <mark class="tax">S$2,700,000</mark> · RIC offset: contingent <mark class="bad">unquantifiable</mark></p></div>
+  <div class="vn-bridge-block"><div class="vn-title">🇻🇳 VN Bridge</div><p style="font-size:.83rem;">Vietnam's Investment Law offers CIT preferential rates (10%) and tax holidays for priority sectors — structurally similar to Singapore's Pioneer. But Vietnam has not yet committed to BEPS Pillar Two implementation for its domestic incentive holders. The BEPS conflict that Meridian faces in Singapore is a preview of a future challenge Vietnam's incentive-holding MNEs will also face when/if Vietnam adopts Pillar Two.</p></div>
+</div>
+
+<!-- ══════════════ ISSUE 2 ══════════════ -->
+<div class="issue-wrap case-section" id="i2">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 02 · CIT</span><div><div class="issue-title">8-Month Property Disposal — Capital Gain or Taxable Trading Income?</div><div class="issue-sub">ITA s10(1)(a) · Badges of Trade · SDA s22B (SSD) · BFC v CIT [2013] SGCA</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This is the foundational application of <strong>§02 Tax Structure</strong> (Singapore has no CGT — gains are only taxable if income in nature) and <strong>§01 Reading</strong> (s10(1)(a) charging provision). The absence of a capital gains tax creates a permanent battleground between taxpayers (all gains are capital = tax-free) and IRAS (short-hold, no income use = trading). The Badges of Trade common law test fills the gap Parliament never codified.</div></div>
+  <div class="box box-fact"><div class="box-title">Facts</div><p>Meridian Holdings purchased 22 Shenton Way commercial property on 15 Feb 2024 for S$5,000,000. Sold 20 Oct 2024 for S$6,200,000. Holding period: <strong>8 months</strong>. No rental income derived. Property was vacant throughout. Purchased with bank loan. Meridian is not in the property trading business (it is a FinTech HoldCo). Gain: S$1,200,000.</p></div>
+  <table class="tbl">
+    <tr><th>Badge of Trade</th><th>Facts</th><th>Capital →</th><th>← Trading</th></tr>
+    <tr><td>Subject matter</td><td>Commercial property — tradeable</td><td>—</td><td>⚠ Moderate</td></tr>
+    <tr><td><strong>Period of ownership</strong></td><td><strong>8 months — very short</strong></td><td>—</td><td class="neg"><strong>🔴 Strong</strong></td></tr>
+    <tr><td>Frequency</td><td>First property disposal</td><td class="pos">🟢 Isolated</td><td>—</td></tr>
+    <tr><td>Supplementary work</td><td>No renovation, sold as-is</td><td class="pos">🟢 No enhancement</td><td>—</td></tr>
+    <tr><td><strong>Acquisition circumstances</strong></td><td><strong>Loan-funded, vacant, no rental intent</strong></td><td>—</td><td class="neg"><strong>🔴 Strong</strong></td></tr>
+    <tr><td>Motive (board minutes)</td><td>"Opportunistic investment"</td><td>—</td><td>⚠ Ambiguous</td></tr>
+    <tr><td>Principal business</td><td>FinTech HoldCo — not a property trader</td><td class="pos">🟢 Outside normal trade</td><td>—</td></tr>
+  </table>
+  <div class="calc"><span class="lbl">// ITA s10(1)(a) — Taxable Profit if Income Character</span>
+<span class="k">Sale_Proceeds</span>      = <span class="n">6,200,000</span>
+<span class="k">Cost</span>               = <span class="n">5,000,000</span>   <span class="c">// incl. BSD S$114,600 — deductible as cost of sale</span>
+<span class="k">Agent_Commission</span>   = <span class="neg-v">(62,000)</span>   <span class="c">// 1% — s14(1)(a) deductible</span>
+<span class="k">Legal_Fees</span>         = <span class="neg-v">(8,000)</span>    <span class="c">// deductible if income-earning</span>
+<span class="k">Loan_Interest</span>      = <span class="neg-v">(72,000)</span>   <span class="c">// 5M × 4.5% × 8/12 — s14(1)(a)</span>
+<span class="k">Net_Taxable_Profit</span> = <span class="res">S$1,058,000</span>
+<span class="k">CIT_At_Standard</span>    = <span class="n">1,058,000</span> <span class="op">×</span> <span class="n">17%</span>  = <span class="res">S$179,860</span>  <span class="c">// property ≠ Pioneer FinTech income</span>
+<span class="c">// Secondary conflict: Pioneer rate (10%) DOES NOT apply — property outside certificate scope</span>
+<span class="c">// This creates income bifurcation: FinTech income @10%, property @17%</span>
+
+<span class="c">// ADDITIONALLY: Seller's Stamp Duty (SDA s22B) — commercial, held &lt;1yr</span>
+<span class="k">SSD</span>                = <span class="n">6,200,000</span> <span class="op">×</span> <span class="n">15%</span>  = <span class="res">S$930,000</span>   <span class="c">// SEPARATE from income tax!</span></div>
+  <div class="box box-critical"><div class="box-title">Critical Thinking: The Rate Bifurcation Problem</div><p style="font-size:.87rem;">Even if the gain is taxable as income, a <em>second conflict</em> arises: does Pioneer rate apply? The Pioneer certificate specifies "qualifying FinTech activities" — property trading is outside scope. Therefore, same entity, same year, two tax rates: FinTech income @ 10% and property gain @ 17%. This income bifurcation requires ring-fencing income streams within the ITA computation. It also interacts with the QDMTT: the BEPS Act ETR computation must determine which income streams attract which covered taxes. A FinTech stream at 10% and a property stream at 17% produce a blended ETR above 15% — potentially reducing the QDMTT obligation on the combined base.</p></div>
+  <div class="box box-verdict"><div class="box-title">Tax Position</div><p>Income character (IRAS likely): CIT <mark class="tax">S$179,860</mark> + SSD <mark class="bad">S$930,000</mark> = <mark class="bad">S$1,109,860 total</mark><br>Capital (taxpayer best case): CIT <mark class="ok">S$0</mark> (but SSD still payable: <mark class="bad">S$930,000</mark>)</p></div>
+</div>
+
+<!-- ══════════════ ISSUE 3 ══════════════ -->
+<div class="issue-wrap case-section" id="i3">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 03 · CIT</span><div><div class="issue-title">S$2,017,500 Non-Deductible Expense Schedule — ITA s14 vs s15 Full Battlefield</div><div class="issue-sub">ITA s14(1)(a) · s15(1)(b)(c)(f) · s14C · McKnight v Sheppard · Lawson v Johnson Matthey</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This is the direct application of <strong>§04 Conflict</strong> (s14 vs s15 — s15 always wins) and <strong>§02 Tax Structure</strong> (what expenses are deductible in computing chargeable income). Each item below maps to a specific s15 sub-provision. The cumulative add-back of S$2,017,500 illustrates how accounting profit and taxable income diverge dramatically in practice.</div></div>
+  <table class="tbl">
+    <tr><th>Expense</th><th>Amount</th><th>Provision</th><th>Tax Treatment</th><th>Risk</th></tr>
+    <tr><td>Client entertainment gala (200 clients)</td><td class="nc">500,000</td><td><span class="prov">s15(1)(b)</span></td><td class="neg">Non-deductible — entertainment/amusement</td><td><span class="tag tag-r">Certain</span></td></tr>
+    <tr><td>MAS regulatory fine</td><td class="nc">120,000</td><td><span class="prov">s15(1)(f)</span></td><td class="neg">Non-deductible — statutory penalty</td><td><span class="tag tag-r">Certain</span></td></tr>
+    <tr><td>Sentosa Cove Club corporate membership</td><td class="nc">350,000</td><td><span class="prov">s15(1)(b)+(c)</span></td><td class="neg">Non-deductible — private + capital</td><td><span class="tag tag-r">Certain</span></td></tr>
+    <tr><td>CEO spouse travel</td><td class="nc">28,000</td><td><span class="prov">s15(1)(b)</span></td><td class="neg">Non-deductible — domestic/private</td><td><span class="tag tag-r">Certain</span></td></tr>
+    <tr><td>Goodwill amortisation</td><td class="nc">400,000</td><td><span class="prov">s15(1)(c)</span></td><td class="neg">Non-deductible — capital; no CA available</td><td><span class="tag tag-r">Certain</span></td></tr>
+    <tr><td>General provision for doubtful debts</td><td class="nc">200,000</td><td><span class="prov">s14C</span></td><td class="neg">Non-deductible — general vs specific</td><td><span class="tag tag-r">Certain</span></td></tr>
+    <tr><td>Aborted IPO transaction costs</td><td class="nc">350,000</td><td><span class="prov">s15(1)(c)</span></td><td class="neg">Non-deductible — capital (equity raising)</td><td><span class="tag tag-r">Certain</span></td></tr>
+    <tr><td>Parking fines (company fleet)</td><td class="nc">4,500</td><td><span class="prov">s15(1)(f)</span></td><td class="neg">Non-deductible — statutory penalty</td><td><span class="tag tag-r">Certain</span></td></tr>
+    <tr><td>CEO personal income tax paid by company</td><td class="nc">65,000</td><td><span class="prov">s15(1)(b)</span></td><td class="neg">Non-deductible — not company's liability</td><td><span class="tag tag-r">Certain</span></td></tr>
+    <tfoot><tr><td><strong>TOTAL ADD-BACK</strong></td><td class="nc neg"><strong>S$2,017,500</strong></td><td colspan="3">100% disallowed — all nine items fail</td></tr></tfoot>
+  </table>
+  <div class="box box-critical"><div class="box-title">Critical Thinking: The "Wholly and Exclusively" Paradox in Action</div><p style="font-size:.87rem;">The entertainment gala dinner — if Meridian can prove S$50,000 directly generated a signed contract that evening, is that portion deductible? The legal answer: <strong>no</strong>. The "wholly and exclusively" test in s14(1)(a) is not an apportionment test. An expense incurred for <em>mixed purposes</em> (entertainment + business development) is wholly disallowed, not partially allowed. This is the <em>Strong &amp; Co v Woodifield</em> principle. Compare: the UK "wholly and exclusively" test has evolved to allow apportionment in <em>Mallalieu v Drummond [1983] AC</em>; Singapore follows the stricter approach. The same dinner fails GST input tax claim under the Fourth Schedule blocking order — but for a different legal reason (specific input tax block, not mixed purpose). Two routes to the same denial.</p></div>
+  <div class="box box-analysis"><div class="box-title">The CEO's Personal Tax Paid by Company — Secondary Issue</div><p>This is a <em>double tax event</em>. The S$65,000 paid on behalf of the CEO: (a) is non-deductible by Meridian (s15(1)(b) — not Meridian's own tax liability); AND (b) is a <em>taxable benefit-in-kind</em> for the CEO under <span class="prov">ITA s10(1)(b)</span> — he received an additional benefit of S$65,000 which should be reported on his IR8A. If not reported, Meridian is liable for under-reporting an employee's income. The company pays the tax <em>and</em> creates a new taxable benefit — a classic double-failure.</p></div>
+  <div class="calc"><span class="lbl">// AGGREGATE CIT IMPACT — Issue 3 Add-Backs</span>
+<span class="k">Total_AddBack</span>          = <span class="n">2,017,500</span>   <span class="c">// increases chargeable income</span>
+<span class="c">// Allocation: most relate to Meridian HoldCo's non-qualifying activities</span>
+<span class="k">AddBack_At_Standard_17%</span> = <span class="n">2,017,500</span> <span class="op">×</span> <span class="n">17%</span>  = <span class="res">S$342,975</span>  <span class="c">// additional tax</span>
+<span class="k">AddBack_At_Pioneer_10%</span>  = <span class="n">2,017,500</span> <span class="op">×</span> <span class="n">10%</span>  = <span class="res">S$201,750</span>  <span class="c">// if Pioneer-qualifying (unlikely)</span>
+<span class="c">// Benefit-in-kind on CEO (s10(1)(b)): CEO assessed on club use + spouse travel value</span>
+<span class="c">// Employer also at risk of IR8A under-reporting penalties under ITA s94</span></div>
+</div>
+
+<!-- ══════════════ ISSUE 4 ══════════════ -->
+<div class="issue-wrap case-section" id="i4">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 04 · CIT+WHT</span><div><div class="issue-title">Vietnam Management Fee — Deductibility, Transfer Pricing & Withholding Tax Triangle</div><div class="issue-sub">ITA s14(1)(a) · s34D (TP) · s45 (WHT) · Singapore-Vietnam DTA Art. 12</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This issue integrates three lessons simultaneously: <strong>§04 Conflict</strong> (s14 "wholly and exclusively" vs related-party payment), <strong>§03 Waterfall</strong> (DTA reduces s45 rate), and <strong>§05 Calendar</strong> (WHT must be remitted within 30 days of payment — Meridian failed). The management fee creates a cascade of three independent obligations: deductibility under CIT, TP arm's length pricing, and WHT withholding.</div></div>
+  <div class="box box-fact"><div class="box-title">Facts</div><p>Meridian Vietnam charged Meridian Holdings S$480,000 for "strategic advisory, IT support, and shared services." Single lump-sum invoice — no detailed service breakdown. Meridian Holdings seeks to deduct this under <span class="prov">ITA s14(1)(a)</span>. No WHT was withheld at time of payment.</p></div>
+  <div class="box box-conflict"><div class="box-title">⚡ Three-Layer Conflict</div>
+    <p><strong>Layer 1 — Deductibility (s14):</strong> Management fees for ongoing services are revenue in nature ✓. But "wholly and exclusively" requires proven specificity of services. A vague "advisory" invoice fails this test — IRAS requires evidence of actual services rendered and reasonable quantum.</p>
+    <p><strong>Layer 2 — Transfer Pricing (s34D):</strong> A subsidiary charging its parent for "strategic advisory" is commercially atypical (usually flows the other way). The arm's length price may be significantly lower than S$480,000. IRAS may reduce the deductible amount to, say, S$150,000 — adding back S$330,000.</p>
+    <p><strong>Layer 3 — WHT (s45):</strong> Management/technical fees to non-residents trigger <span class="prov">ITA s45</span>. Domestic rate: 17%. Singapore-Vietnam DTA Art. 12 may reduce to 10% for qualifying technical fees. Meridian failed to withhold anything.</p></div>
+  <div class="calc"><span class="lbl">// WHT — Management Fee to Vietnam Entity</span>
+<span class="k">Payment</span>              = <span class="n">480,000</span>
+<span class="k">WHT_Domestic_17%</span>    = <span class="n">480,000</span> <span class="op">×</span> <span class="n">17%</span>  = <span class="res">S$81,600</span>
+<span class="k">WHT_DTA_10%</span>         = <span class="n">480,000</span> <span class="op">×</span> <span class="n">10%</span>  = <span class="res">S$48,000</span>  <span class="c">// if "technical fees" qualify under DTA</span>
+<span class="c">// Meridian withheld: S$0</span>
+<span class="k">Surcharge_ITA_s45(4)</span>= <span class="n">81,600</span> <span class="op">×</span> <span class="n">5%</span>   = <span class="res">S$4,080</span>
+<span class="c">// Deductibility: if TP adjustment reduces to S$150K arm's length</span>
+<span class="k">TP_Disallowed</span>       = <span class="n">480,000</span> <span class="op">-</span> <span class="n">150,000</span> = <span class="res">S$330,000 add-back</span>
+<span class="k">Additional_CIT</span>      = <span class="n">330,000</span> <span class="op">×</span> <span class="n">17%</span>  = <span class="res">S$56,100</span>
+<span class="c">// Vietnam side: S$480K income — potentially subject to Vietnam CIT + FCT</span></div>
+  <div class="vn-bridge-block"><div class="vn-title">🇻🇳 VN Bridge — Foreign Contractor Tax (Thuế nhà thầu)</div><p style="font-size:.83rem;">In Vietnam, when a foreign entity (Meridian Holdings — Singapore) <em>receives</em> services from a Vietnamese entity, there is generally no FCT issue (FCT applies to foreign contractors providing services <em>to</em> Vietnam, not receiving from). But when Meridian <em>pays</em> the Vietnamese entity S$480K, that income is taxable in Vietnam under the Vietnam CIT regime at 20% — and potentially subject to withholding tax at source by the Vietnamese tax authority. Meridian must check: is the Vietnam subsidiary declaring this management fee income? Has Vietnam CIT been paid? If not, Meridian's TP documentation cannot claim this is an arm's length service transaction.</p></div>
+</div>
+
+<!-- ══════════════ PART II ══════════════ -->
+<div class="part-hdr case-section" id="partII">
+  <div class="ph-num">PART II · GOODS AND SERVICES TAX</div>
+  <h2>Issues 5–6: Mixed Supplies, Partial Exemption & Overseas Vendor Registration</h2>
+</div>
+
+<!-- ══════════════ ISSUE 5 ══════════════ -->
+<div class="issue-wrap case-section" id="i5">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 05 · GST</span><div><div class="issue-title">Meridian Fintech: Mixed Supply GST Apportionment — CEILING Function Applied</div><div class="issue-sub">GST Act s26 · s21(3)(j) · 4th Schedule · De Minimis Rule · CEILING(ratio, 1)</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This is the direct application of <strong>§06 Math</strong> (CEILING function, de minimis MIN test) and <strong>§02 Tax Structure</strong> (GST zero-rating for exports vs exemption for financial services — critically different for recovery purposes). The key counter-intuitive insight: zero-rated exports COUNT as taxable in the recovery ratio numerator; exempt supplies do not. This single distinction changes the recovery calculation from ~20% to ~51%.</div></div>
+  <div class="box box-fact"><div class="box-title">Meridian Fintech Revenue Mix (FY 2024)</div>
+    <table class="tbl">
+      <tr><th>Supply Type</th><th>Revenue</th><th>GST Status</th></tr>
+      <tr><td>SaaS licences (Singapore)</td><td class="nc">S$3,200,000</td><td><span class="tag tag-g">Standard 9%</span></td></tr>
+      <tr><td>SaaS licences (exported overseas)</td><td class="nc">S$4,800,000</td><td><span class="tag tag-b">Zero-rated 0%</span></td></tr>
+      <tr><td>Payment processing (financial services)</td><td class="nc">S$6,500,000</td><td><span class="tag tag-r">Exempt — 4th Sch</span></td></tr>
+      <tr><td>Crypto exchange (DPT)</td><td class="nc">S$1,200,000</td><td><span class="tag tag-r">Exempt — DPT</span></td></tr>
+      <tfoot><tr><td><strong>Total</strong></td><td class="nc"><strong>S$15,700,000</strong></td><td>Mixed</td></tr></tfoot>
+    </table>
+    <p style="font-size:.83rem;margin-top:10px;">Total input tax: S$620,000 | Direct taxable: S$180,000 | Direct exempt: S$95,000 | Residual overhead: S$345,000</p></div>
+  <div class="calc"><span class="lbl">// GST PARTIAL EXEMPTION — Meridian Fintech FY 2024 (GST Act s26)</span>
+<span class="c">// Taxable supplies = Standard-rated + Zero-rated (BOTH count)</span>
+<span class="k">Taxable_Supplies</span>      = <span class="n">3,200,000</span> <span class="op">+</span> <span class="n">4,800,000</span>  = <span class="n">8,000,000</span>
+<span class="k">Exempt_Supplies</span>       = <span class="n">6,500,000</span> <span class="op">+</span> <span class="n">1,200,000</span>  = <span class="n">7,700,000</span>
+<span class="k">Total_Supplies</span>        = <span class="n">15,700,000</span>
+
+<span class="k">Raw_Ratio</span>             = <span class="n">8,000,000</span> <span class="op">/</span> <span class="n">15,700,000</span>  = <span class="n">50.9554%</span>
+<span class="k">Rounded_Ratio</span>         = <span class="fn">CEILING</span>(<span class="n">50.9554</span>, <span class="n">1</span>)   = <span class="res">51%</span>  <span class="c">// round UP to nearest whole %</span>
+
+<span class="k">Recoverable_Residual</span>  = <span class="n">345,000</span> <span class="op">×</span> <span class="n">51%</span>          = <span class="n">175,950</span>
+<span class="k">Total_Recoverable_IT</span>  = <span class="n">180,000</span> <span class="op">+</span> <span class="n">175,950</span>      = <span class="res">S$355,950</span>
+<span class="k">Total_Blocked_IT</span>      = <span class="n">95,000</span>  <span class="op">+</span> <span class="n">169,050</span>      = <span class="res">S$264,050</span>
+
+<span class="c">// De Minimis Test: is non-recoverable IT ≤ MIN(5% × total IT, S$12K/year)?</span>
+<span class="k">DM_5pct</span>               = <span class="n">5%</span> <span class="op">×</span> <span class="n">620,000</span>          = <span class="n">31,000</span>
+<span class="k">DM_Threshold</span>          = <span class="fn">MIN</span>(<span class="n">31,000</span>, <span class="n">12,000</span>)   = <span class="n">12,000</span>
+<span class="c">// Blocked IT S$264,050 >> S$12,000 → De minimis DOES NOT apply</span>
+<span class="c">// Partial exemption rules must apply in full</span>
+<span class="res">// FINAL: Recoverable S$355,950 | Permanently blocked S$264,050</span></div>
+  <div class="box box-critical"><div class="box-title">Critical Thinking: Why Zero-Rated Exports Are in the Numerator</div><p style="font-size:.87rem;">Zero-rated exports (S$4,800,000) generate no Singapore output GST. Yet they <em>count as taxable supplies</em> for the recovery ratio. This is deliberate policy: Singapore taxes these supplies at 0% because they are consumed overseas. To avoid burdening exports with irrecoverable input tax, Parliament treats zero-rated supplies as taxable in the recovery calculation. If zero-rated exports were excluded, the taxable ratio would be only S$3.2M / S$15.7M = 20.4% — recovering only S$70,380 of residual input tax instead of S$175,950. The S$105,570 difference represents the real value of Singapore's export competitiveness policy.</p></div>
+</div>
+
+<!-- ══════════════ ISSUE 6 ══════════════ -->
+<div class="issue-wrap case-section" id="i6">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 06 · GST</span><div><div class="issue-title">US SaaS Subscriptions — OVR, Reverse Charge & the Double-GST Trap</div><div class="issue-sub">GST Act s38 (reverse charge) · OVR regime (from 2020) · B2B extension (from 2023)</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This applies <strong>§07 Unresolved Dilemmas</strong> (digital services GST — multiple collection points) and <strong>§02 Tax Structure</strong> (GST — who must register, who must collect). The OVR (Overseas Vendor Registration) and reverse charge mechanisms are two separate tools for the same policy goal — but they can collide when an overseas vendor is both OVR-registered AND the recipient applies reverse charge on the same supply.</div></div>
+  <table class="tbl">
+    <tr><th>Service</th><th>Supplier</th><th>GST Mechanism</th><th>GST Amount</th><th>Double-Tax Risk?</th></tr>
+    <tr><td>AWS cloud infrastructure</td><td>Amazon (US) — NOT OVR-registered</td><td>Reverse Charge (Meridian self-accounts)</td><td class="nc">~S$23,600</td><td><span class="tag tag-g">Low — OVR check needed</span></td></tr>
+    <tr><td>Salesforce CRM</td><td>Salesforce (US) — OVR-registered</td><td>Supplier charges GST on invoice</td><td class="nc">S$5,570</td><td><span class="tag tag-g">Low — if verified</span></td></tr>
+    <tr><td>Vietnamese AI vendor</td><td>Unregistered B2B — not OVR</td><td>Reverse Charge — Meridian self-accounts 9%</td><td class="nc">S$25,200</td><td><span class="tag tag-b">Medium</span></td></tr>
+    <tr><td>AWS (if also self-charged)</td><td>OVR-registered (post-2021)</td><td><mark class="bad">DOUBLE CHARGE RISK</mark></td><td class="nc neg">Double S$23,600</td><td><span class="tag tag-r">HIGH — common error</span></td></tr>
+  </table>
+  <div class="box box-unresolved"><div class="box-title">The Double-GST Problem — IRAS Guidance Gap</div><p>AWS began charging Singapore GST under OVR from 2021. But many Singapore companies' accounting teams still apply reverse charge on all overseas digital services — creating double GST collection. If both the OVR vendor AND the recipient charge GST, total GST on the same supply exceeds 9%. IRAS has not issued a formal correction procedure. The taxpayer must verify each overseas supplier's OVR registration status and adjust accordingly — creating a due diligence obligation that most companies underperform.</p></div>
+</div>
+
+<!-- ══════════════ PART III ══════════════ -->
+<div class="part-hdr case-section" id="partIII">
+  <div class="ph-num">PART III · STAMP DUTIES & PROPERTY TAX</div>
+  <h2>Issues 7–8: ABSD Corporate Rate, BSD Computation & Annual Value Dispute</h2>
+</div>
+
+<!-- ══════════════ ISSUE 7 ══════════════ -->
+<div class="issue-wrap case-section" id="i7">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 07 · SDA</span><div><div class="issue-title">Corporate Entity Acquires Residential Property — ABSD 65% = S$2.5M Penalty</div><div class="issue-sub">SDA s22A (BSD) · s22C (ABSD 65%) · MAX(price, market value) · Developer remission</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This applies <strong>§02 Tax Structure</strong> (stamp duties — BSD and ABSD) and <strong>§06 Math</strong> (BSD progressive bands using MIN/MAX operators, ABSD applied to MAX(price, MV)). The 65% ABSD on corporate entities is a deliberate policy deterrent — understanding <em>why</em> it exists at this rate is as important as computing it correctly.</div></div>
+  <div class="calc"><span class="lbl">// BSD + ABSD — Meridian PropCo (Corporate Entity, Residential 2nd property)</span>
+<span class="c">// BSD basis = MAX(purchase price, market value) = MAX(3,800,000, 3,850,000)</span>
+<span class="k">BSD_Basis</span>    = <span class="fn">MAX</span>(<span class="n">3,800,000</span>, <span class="n">3,850,000</span>) = <span class="n">3,850,000</span>
+<span class="c">// BSD Progressive Bands (SDA s22A — 2023 rates)</span>
+<span class="k">Band1</span>        = <span class="fn">MIN</span>(<span class="n">3,850,000</span>, <span class="n">180,000</span>) <span class="op">×</span> <span class="n">1%</span>                              = <span class="n">1,800</span>
+<span class="k">Band2</span>        = <span class="fn">MIN</span>(<span class="fn">MAX</span>(<span class="n">3,850K</span><span class="op">-</span><span class="n">180K</span>,<span class="n">0</span>),<span class="n">180K</span>) <span class="op">×</span> <span class="n">2%</span>                       = <span class="n">3,600</span>
+<span class="k">Band3</span>        = <span class="fn">MIN</span>(<span class="fn">MAX</span>(<span class="n">3,850K</span><span class="op">-</span><span class="n">360K</span>,<span class="n">0</span>),<span class="n">640K</span>) <span class="op">×</span> <span class="n">3%</span>                       = <span class="n">19,200</span>
+<span class="k">Band4</span>        = <span class="fn">MIN</span>(<span class="fn">MAX</span>(<span class="n">3,850K</span><span class="op">-</span><span class="n">1,000K</span>,<span class="n">0</span>),<span class="n">500K</span>) <span class="op">×</span> <span class="n">4%</span>                    = <span class="n">20,000</span>
+<span class="k">Band5</span>        = <span class="fn">MIN</span>(<span class="fn">MAX</span>(<span class="n">3,850K</span><span class="op">-</span><span class="n">1,500K</span>,<span class="n">0</span>),<span class="n">1,500K</span>) <span class="op">×</span> <span class="n">5%</span>                  = <span class="n">75,000</span>
+<span class="k">Band6</span>        = <span class="fn">MAX</span>(<span class="n">3,850K</span><span class="op">-</span><span class="n">3,000K</span>,<span class="n">0</span>) <span class="op">×</span> <span class="n">6%</span>                                = <span class="n">51,000</span>
+<span class="k">BSD_Total</span>    =                                                                  <span class="res">S$170,600</span>
+
+<span class="c">// ABSD — Corporate Entity: 65% on MAX(price, MV)</span>
+<span class="k">ABSD</span>         = <span class="n">3,850,000</span> <span class="op">×</span> <span class="n">65%</span>                                            = <span class="res">S$2,502,500</span>
+<span class="k">Total_SD</span>     = <span class="n">170,600</span> <span class="op">+</span> <span class="n">2,502,500</span>                                         = <span class="res">S$2,673,100</span>
+<span class="k">Eff_SD_Rate</span>  = <span class="n">2,673,100</span> <span class="op">/</span> <span class="n">3,800,000</span>                                       = <span class="res">70.3%</span>
+<span class="c">// Total acquisition cost: S$3,800,000 + S$2,673,100 + legal = S$6,480,000+</span>
+<span class="c">// Property must appreciate to >S$6.48M before any profit — requires 70% capital gain</span></div>
+  <div class="box box-critical"><div class="box-title">Critical Thinking: Was This Acquisition Commercially Rational?</div><p style="font-size:.87rem;">At S$2,673,100 in stamp duty on a S$3,800,000 property, the acquisition cost is S$6,473,100. At 5% annual capital appreciation, the property reaches S$6,473,100 in approximately <strong>12 years</strong>. This illustrates that ABSD at 65% is not primarily a revenue measure — it is a deliberate policy barrier. The question for Meridian: did the board understand the ABSD consequence before proceeding? A competent tax adviser would have advised strongly against this acquisition. The failure to obtain tax advice before acquiring a residential investment property as a corporate entity is itself a governance failure with S$2.5M consequences.</p></div>
+</div>
+
+<!-- ══════════════ ISSUE 8 ══════════════ -->
+<div class="issue-wrap case-section" id="i8">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 08 · PTA+ITA</span><div><div class="issue-title">Annual Value Dispute — Notional Rent vs Actual Rent & Cross-Tax Interaction</div><div class="issue-sub">PTA s2 (AV definition) · s20A (objection) · ITA s10(1)(f) · s14(1)(a) (property tax deductible)</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This issue demonstrates a non-obvious cross-tax interaction from <strong>§02 Tax Structure</strong>: property tax (PTA) and income tax (ITA) are independent Acts with different bases. Rare example where one tax (property tax) is actually deductible when computing another tax (income tax on rental). This is an interaction that requires reading two Acts together — a key skill from <strong>§01 Reading</strong>.</div></div>
+  <div class="box box-conflict"><div class="box-title">⚡ Notional Rent vs Actual Rent — Independent Bases</div>
+    <p><strong>Annual Value (PTA s2):</strong> the gross amount at which the property <em>can reasonably be expected to be let</em> — a notional market rent. IRAS assessed AV = S$480,000 (market rent). Actual rent: S$380,000 (locked in by 2021 COVID-era lease). Property tax is levied on S$480,000, not S$380,000.</p>
+    <p><strong>ITA s10(1)(f):</strong> actual rental income of S$380,000 is taxable. So Meridian pays: (a) property tax on S$480K notional, and (b) income tax on S$380K actual. But the S$48,000 property tax is <span class="prov">ITA s14(1)(a)</span> deductible — reducing the income tax base.</p></div>
+  <table class="tbl">
+    <tr><th>Tax</th><th>Base</th><th>Rate</th><th>Amount</th></tr>
+    <tr><td>Property Tax (PTA s6)</td><td>AV S$480,000 (contested)</td><td>10% commercial</td><td class="nc neg"><strong>S$48,000</strong></td></tr>
+    <tr><td>ITA s10(1)(f) rental income</td><td>S$380,000 − S$48,000 PT − other deductions ≈ S$310,000</td><td>17% (standard)</td><td class="nc neg"><strong>≈S$52,700</strong></td></tr>
+    <tfoot><tr><td><strong>Combined tax on S$380K actual rent</strong></td><td colspan="2">Effective rate on actual rent</td><td class="nc neg"><strong>≈S$100,700 (26.5%)</strong></td></tr></tfoot>
+  </table>
+</div>
+
+<!-- ══════════════ PART IV ══════════════ -->
+<div class="part-hdr case-section" id="partIV">
+  <div class="ph-num">PART IV · INTERNATIONAL TAX</div>
+  <h2>Issues 9–11: WHT, Transfer Pricing & Treaty Shopping</h2>
+</div>
+
+<!-- ══════════════ ISSUE 9 ══════════════ -->
+<div class="issue-wrap case-section" id="i9">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 09 · WHT+TP</span><div><div class="issue-title">Royalties to UK IP Shell — Beneficial Ownership Trap & PPT Test</div><div class="issue-sub">ITA s45 · ITA s49 · SG-UK DTA Art. 12 · MLI Art. 7 (PPT) · OECD Commentary on Beneficial Ownership</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This is the full integration of <strong>§03 Waterfall</strong> (Level 2 — DTAs and MLI override domestic law only under defined conditions) and <strong>§04 Conflict</strong> (Tax ↔ DTA tab). The DTA 8% rate is available only if Meridian UK is the <em>beneficial owner</em>. The MLI PPT provides an additional denial mechanism. Both operate simultaneously — two independent reasons to deny the DTA benefit.</div></div>
+  <div class="calc"><span class="lbl">// WHT ANALYSIS — Royalty to Meridian UK (S$1,800,000)</span>
+<span class="k">WHT_Domestic_s45</span>       = <span class="n">1,800,000</span> <span class="op">×</span> <span class="n">10%</span>  = <span class="n">180,000</span>  <span class="c">// no DTA</span>
+<span class="k">WHT_DTA_8pct</span>           = <span class="n">1,800,000</span> <span class="op">×</span>  <span class="n">8%</span>  = <span class="n">144,000</span>  <span class="c">// SG-UK DTA Art. 12 (IF available)</span>
+<span class="k">DTA_Saving</span>             =                       <span class="n">36,000</span>  <span class="c">// the contested saving</span>
+
+<span class="c">// PPT Test (MLI Art. 7): Was a principal purpose of the UK structure to obtain the DTA benefit?</span>
+<span class="c">// Meridian UK: no UK staff, no UK substance, managed from Singapore</span>
+<span class="c">// → PPT Test LIKELY FAILS → DTA benefit denied → domestic rate 10% applies</span>
+<span class="k">WHT_If_PPT_Fails</span>       = <span class="n">1,800,000</span> <span class="op">×</span> <span class="n">10%</span>  = <span class="res">S$180,000</span>  <span class="c">// + penalty for underpaid WHT</span>
+
+<span class="c">// TP Overlay (s34D): Is the S$1.8M royalty arm's length?</span>
+<span class="c">// If arm's length = S$1.2M → Meridian Fintech deduction reduced by S$600K</span>
+<span class="c">// S$600K add-back × 17% = S$102,000 additional CIT</span>
+<span class="c">// WHT still on full S$1.8M gross → cumulative over-taxation on excess royalty</span></div>
+  <div class="box box-analysis"><div class="box-title">The Beneficial Ownership Test — Substance Over Form</div><p>Under the OECD Commentary on Art. 12, "beneficial owner" is not merely the legal owner. The recipient must have the right to <em>use and enjoy</em> the royalties without being obliged to pass them on. Meridian UK: no UK employees, no UK management decisions, all decisions made by Singapore board. If Meridian UK is contractually or practically obliged to distribute its royalty income to the Cayman parent, it is a conduit — not a beneficial owner. The DTA benefit vanishes entirely.</p></div>
+</div>
+
+<!-- ══════════════ ISSUE 10 ══════════════ -->
+<div class="issue-wrap case-section" id="i10">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 10 · TP</span><div><div class="issue-title">S$10M Intra-Group Loan at 2% — Transfer Pricing in a 7% Interest Rate Environment</div><div class="issue-sub">ITA s34D · IRAS TP Guidelines · CUP Method · MAP under DTA Art. 25 · TP Surcharge ITA s34F</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This applies <strong>§07 Unresolved Dilemmas</strong> (TP arm's length on intra-group financing — live dispute area) and the mathematical framework from <strong>§06 Math</strong>. The TP adjustment creates economic double taxation across Singapore and Vietnam — which can only be resolved through MAP under <strong>§03 Waterfall</strong> (DTA Art. 25). The MAP process illustrates the practical limits of the DTA framework.</div></div>
+  <div class="calc"><span class="lbl">// TRANSFER PRICING — S$10M Loan to Meridian Vietnam</span>
+<span class="k">Actual_Rate</span>            = <span class="n">2.00%</span>
+<span class="k">Actual_Interest</span>        = <span class="n">10,000,000</span> <span class="op">×</span> <span class="n">2%</span>  = <span class="n">200,000</span>
+
+<span class="c">// Arm's length rate: SORA (1Y) Jan 2024 ~3.70% + VN credit risk ~3.0–3.5%</span>
+<span class="k">ALS_Rate_Low</span>           = <span class="n">3.70%</span> <span class="op">+</span> <span class="n">2.50%</span>  = <span class="n">6.20%</span>
+<span class="k">ALS_Interest_Low</span>       = <span class="n">10,000,000</span> <span class="op">×</span> <span class="n">6.20%</span>  = <span class="n">620,000</span>
+
+<span class="c">// IRAS TP Adjustment (ITA s34D) — income uplift on Meridian Holdings</span>
+<span class="k">TP_Adjustment</span>          = <span class="n">620,000</span> <span class="op">-</span> <span class="n">200,000</span>  = <span class="res">S$420,000</span>  <span class="c">// additional income for SG HoldCo</span>
+<span class="k">CIT_On_TP_Adj</span>          = <span class="n">420,000</span> <span class="op">×</span> <span class="n">17%</span>      = <span class="res">S$71,400</span>   <span class="c">// financing income ≠ Pioneer</span>
+
+<span class="c">// Surcharge if no contemporaneous TP documentation (ITA s34F)</span>
+<span class="k">TP_Surcharge</span>           = <span class="n">420,000</span> <span class="op">×</span> <span class="n">5%</span>       = <span class="res">S$21,000</span>   <span class="c">// additional penalty</span>
+
+<span class="c">// Vietnam's deduction stays at actual S$200K interest — no automatic adjustment</span>
+<span class="c">// Double taxation of S$420K until MAP resolved (2–4 years, non-guaranteed)</span></div>
+  <div class="vn-bridge-block"><div class="vn-title">🇻🇳 VN Bridge — MAP and Corresponding Adjustments</div><p style="font-size:.83rem;">Under Vietnam's domestic TP rules (Decree 132/2020/ND-CP), Meridian Vietnam's deductible interest is the <em>actual</em> S$200,000 paid. Vietnam does not automatically grant a corresponding adjustment when Singapore increases Meridian Holdings' income by S$420,000. To obtain Vietnam-side relief, Meridian must invoke the Mutual Agreement Procedure under Singapore-Vietnam DTA Art. 25. Vietnam's MAP track record is slow. In practice, Vietnamese entities often accept the double taxation rather than pursue MAP — highlighting the asymmetry between Singapore's mature tax dispute infrastructure and Vietnam's developing one.</p></div>
+</div>
+
+<!-- ══════════════ ISSUE 11 ══════════════ -->
+<div class="issue-wrap case-section" id="i11">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 11 · INTL</span><div><div class="issue-title">Cayman Islands Ultimate Parent — Treaty Shopping via Singapore & Substance Requirements</div><div class="issue-sub">ITA s33 (GAAR) · ITA s49 · MLI Art. 7 (PPT) · Vienna Convention · BEPS SBIE</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This is the capstone application of <strong>§03 Waterfall</strong> (Levels 2–6: how DTAs, MLI, GAAR, and substance requirements interact) and <strong>§04 Conflict</strong> (GAAR vs DTA — can s33 override treaty benefits?). The answer depends on whether Singapore substance is genuine or cosmetic — the key practical distinction the entire Meridian international structure turns on.</div></div>
+  <div class="box box-analysis"><div class="box-title">The Treaty Shopping Architecture — Three Layers of Challenge</div>
+    <p><strong>Layer 1 — MLI Art. 7 PPT:</strong> Was obtaining Singapore's DTA network a <em>principal purpose</em> of maintaining Singapore HoldCo? If Cayman Islands parent could achieve the same commercial result without Singapore, the Singapore structure may be challenged under PPT. Result: DTA benefits denied across all Singapore-treaty-partner WHT rates.</p>
+    <p><strong>Layer 2 — ITA s33 GAAR:</strong> Even without MLI, s33 can disregard arrangements where dominant purpose is tax reduction. Post-<span class="cite">CIT v AQQ</span>, the counterfactual test: would Meridian have maintained the Singapore HoldCo but for the DTA/tax benefits? If no → s33 may apply.</p>
+    <p><strong>Layer 3 — BEPS SBIE (Substance-Based Income Exclusion):</strong> Under Pillar Two, genuine Singapore substance (payroll × 5% + tangible assets × 5%) can be excluded from the QDMTT base — incentivising real substance. This creates a paradox: <em>having more Singapore substance increases the tax base (more Singapore income) but also increases the SBIE exclusion (reducing the top-up tax base)</em>. Genuine substance is simultaneously a tax cost and a tax shield.</p></div>
+  <div class="box box-critical"><div class="box-title">Critical Thinking: The Substance Paradox</div><p style="font-size:.87rem;">Every measure Meridian takes to demonstrate genuine Singapore substance — hiring more Singapore employees, acquiring Singapore assets, making Singapore-based management decisions — simultaneously: (a) strengthens the defence against PPT/s33 challenges; (b) increases Singapore's taxable base (more income attributable to Singapore); and (c) increases the SBIE exclusion under Pillar Two (reducing QDMTT). The net effect is ambiguous: substance both costs money (higher Singapore wages) and saves money (SBIE, DTA preservation, s33 defence). Meridian's optimal substance level is the point where the marginal cost of additional substance equals the marginal tax saving — a calculation that requires integrated modelling across CIT, QDMTT, and WHT simultaneously.</p></div>
+</div>
+
+<!-- ══════════════ PART V ══════════════ -->
+<div class="part-hdr case-section" id="partV">
+  <div class="ph-num">PART V · CONTENTIOUS & UNRESOLVED ISSUES</div>
+  <h2>Issues 12–15: Crypto, Gig Workers, GAAR & Director Fees</h2>
+</div>
+
+<!-- ══════════════ ISSUE 12 ══════════════ -->
+<div class="issue-wrap case-section" id="i12">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 12 · CIT</span><div><div class="issue-title">Meridian Crypto Treasury — DeFi, NFTs & Singapore's Tax Black Hole</div><div class="issue-sub">ITA s10(1)(a)/(g) · IRAS Crypto e-Tax Guide 2020 · DPT GST exemption · OECD CARF 2022</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This is the direct application of <strong>§07 Unresolved Dilemmas</strong> (Issue 1 — cryptocurrency). The same Badges of Trade test from Issue 2 (property) applies to crypto — but with even less judicial guidance. The corporate purpose (Meridian Crypto Treasury was set up to trade digital assets) creates an almost irrebuttable inference of trading intention.</div></div>
+  <table class="tbl">
+    <tr><th>Transaction</th><th>Amount</th><th>Likely Tax Treatment</th><th>Certainty</th></tr>
+    <tr><td>ETH sold (14-month hold)</td><td class="nc">S$1,600,000 gain</td><td class="neg">Taxable — entity set up to trade; intention = trading</td><td><span class="tag tag-r">High</span></td></tr>
+    <tr><td>BTC sold (3-month hold)</td><td class="nc">S$700,000 gain</td><td class="neg">Taxable — strong short-hold badge</td><td><span class="tag tag-r">Very High</span></td></tr>
+    <tr><td>DeFi yield farming rewards</td><td class="nc">S$120,000</td><td class="neg">Best position: s10(1)(g) "other income" at receipt value</td><td><span class="tag tag-b">No guidance</span></td></tr>
+    <tr><td>ETH staking rewards</td><td class="nc">S$60,000</td><td class="neg">Likely s10(1)(g) — passive income</td><td><span class="tag tag-b">No guidance</span></td></tr>
+    <tr><td>ETH→USDC crypto-to-crypto swap</td><td class="nc">S$45,000 gain</td><td class="bad">Is this a disposal event? IRAS silent.</td><td><span class="tag tag-r">Unresolved</span></td></tr>
+    <tr><td>NFT minted and sold</td><td class="nc">S$180,000</td><td class="neg">s10(1)(a) trade income if sold in course of trade</td><td><span class="tag tag-b">Limited guidance</span></td></tr>
+    <tfoot><tr><td><strong>Total crypto tax exposure (IRAS likely)</strong></td><td class="nc neg"><strong>≈S$459,000</strong></td><td colspan="2">at 17% on ~S$2.7M taxable gains</td></tr></tfoot>
+  </table>
+  <div class="box box-unresolved"><div class="box-title">DeFi Yield Farming — Singapore's Most Significant Tax Black Hole</div><p>Yield farming rewards (S$120,000 in UNI governance tokens): <strong>(a) When recognised?</strong> At receipt (illiquid, volatile) or at sale (realisation)? <strong>(b) Tax base?</strong> Market value at receipt — creates tax liability on amounts that may become worthless. <strong>(c) Is staking a GST supply?</strong> If yield farming is a financial service (lending crypto to a pool), it may be GST-exempt; if a goods supply, standard-rated. No IRAS guidance on any of these points. <strong>Best practice 2025: apply conservative s10(1)(g) treatment, recognise at receipt at market value, file a query to IRAS for advance guidance under ITA s108.</strong></p></div>
+</div>
+
+<!-- ══════════════ ISSUE 13 ══════════════ -->
+<div class="issue-wrap case-section" id="i13">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 13 · CPF+ITA</span><div><div class="issue-title">3,200 Platform Workers — PWA 2024 vs ITA Classification Paradox & CPF Deductibility</div><div class="issue-sub">ITA s10(1)(a)/(b) · CPF Act s7 · Platform Workers Act 2024 (MOM) · ITA s14(1)(c)</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This is the real-world application of <strong>§04 Conflict</strong> (Multi-Act tab — ITA vs labour law) and <strong>§07 Dilemmas</strong> (Issue 2 — gig economy). The ITA has not been amended to accommodate the PWA 2024's new worker category. Until it is, two independent statutes produce inconsistent classifications — a legislative gap that Meridian must navigate in live compliance.</div></div>
+  <div class="calc"><span class="lbl">// CPF OBLIGATIONS — Platform Workers (FY 2025 onward under PWA 2024)</span>
+<span class="c">// Phase-in rates (employer contributions):</span>
+<span class="c">// 2025: 3.5%  |  2026: 5.5%  |  2027: 7.5%  |  2028: 9%  (full phase-in)</span>
+<span class="k">Qualifying_Workers</span>     ≈ <span class="n">800</span>   <span class="c">// earning >S$6K/year from platform</span>
+<span class="k">Est_Qualifying_Income</span>  = <span class="n">800</span> <span class="op">×</span> <span class="n">~S$36,000/yr</span>  = <span class="n">28,800,000</span>
+
+<span class="k">Employer_CPF_2025</span>      = <span class="n">28,800,000</span> <span class="op">×</span> <span class="n">3.5%</span>  = <span class="res">S$1,008,000</span>  <span class="c">// new cost to Meridian Gig</span>
+<span class="k">Employer_CPF_2029</span>      = <span class="n">28,800,000</span> <span class="op">×</span> <span class="n">9.0%</span>  = <span class="res">S$2,592,000</span>  <span class="c">// full phase-in</span>
+
+<span class="c">// ITA deductibility question (ITA s14(1)(c)):</span>
+<span class="c">// s14(1)(c) allows deduction for CPF contributions "in respect of employees"</span>
+<span class="c">// Platform workers = NOT employees under ITA (they are s10(1)(a) self-employed)</span>
+<span class="c">// → CPF contributions by platform operator may NOT be deductible under s14(1)(c)</span>
+<span class="res">// UNRESOLVED: Creates S$1M+ non-deductible cost from 2025</span></div>
+  <div class="box box-conflict"><div class="box-title">⚡ The PWA 2024 / ITA Paradox</div><p>MOM says: Meridian Gig must make CPF contributions for qualifying platform workers (like an employer). ITA says: platform workers are self-employed (s10(1)(a)), not employees — no employment relationship. <span class="prov">ITA s14(1)(c)</span> deductibility requires "employees." If workers are not employees under ITA, the CPF contribution is non-deductible — a permanent tax cost of up to S$2.6M/year at full phase-in. Parliament has not amended ITA to create a corresponding deduction for PWA CPF contributions. Meridian's legal team must decide: (a) treat workers as employees for ITA (creates other complications) or (b) treat as self-employed and accept non-deductible CPF contributions.</p></div>
+</div>
+
+<!-- ══════════════ ISSUE 14 ══════════════ -->
+<div class="issue-wrap case-section" id="i14">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 14 · GAAR</span><div><div class="issue-title">Dividend Stripping — ITA s33 vs s13(1)(za): The Most Dangerous Transaction in the Case</div><div class="issue-sub">ITA s33 · s13(1)(za) (one-tier dividend exemption) · CIT v AQQ [2014] SGCA · Parliamentary intent</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This is the pinnacle application of <strong>§03 Waterfall</strong> (Level 5 — IRAS administrative position vs courts) and <strong>§04 Conflict</strong> (GAAR tab — s33 vs specific exemption provisions). The one-tier dividend system (s13(1)(za)) sits at Level 3 (primary legislation). Section 33 GAAR also sits at Level 3. Two primary legislative provisions in conflict — resolved only by parliamentary intent, the purposive approach (<strong>§01 Reading, Step 4</strong>), and the SGCA counterfactual test.</div></div>
+  <div class="box box-fact"><div class="box-title">The Arrangement — Classic Dividend Strip</div>
+    <p>1. Meridian acquires TechCo (100%) for S$20,000,000. TechCo has S$8,000,000 retained earnings.<br>
+    2. TechCo immediately declares S$8,000,000 dividend → Meridian receives tax-free under <span class="prov">s13(1)(za)</span>.<br>
+    3. TechCo's net assets now = ~S$12,000,000. Meridian sells TechCo for S$12,000,000.<br>
+    4. Net economic result: S$20M out → S$8M dividend + S$12M sale proceeds = S$20M in. Zero economic gain. But S$8M extracted tax-free from TechCo's retained earnings.</p></div>
+  <div class="box box-issue"><div class="box-title">The Core Legal Conflict</div>
+    <p><strong>Taxpayer's argument:</strong> Parliament designed the one-tier system to prevent double taxation. TechCo's earnings were already taxed at corporate level. The S$8M dividend is exactly what s13(1)(za) was designed to exempt. Meridian is simply using the law as written.</p>
+    <p><strong>IRAS's argument (s33 GAAR):</strong> The counterfactual test: <em>would Meridian have acquired and immediately divested TechCo but for the tax benefit of extracting S$8M tax-free?</em> The answer is no — the transaction has zero commercial purpose beyond extracting retained earnings. s33 applies to "disregard or vary" the arrangement.</p></div>
+  <div class="box box-critical"><div class="box-title">Critical Thinking: Parliamentary Intent vs Tax Avoidance</div><p style="font-size:.87rem;">The one-tier system was designed for genuine dividend distributions — a company distributing organic profits to long-term shareholders. It was not designed for the acquisition of a company <em>specifically</em> to extract its accumulated profits and immediately sell the shell. The absence of a specific dividend-stripping provision (unlike Australia's s45B ITAA 1997) means s33 GAAR must carry the entire anti-avoidance load. But s33's "dominant purpose" test is broader than Australia's specific provision — potentially reaching genuine dividend transactions. The risk of over-breadth is the main argument against applying s33 here. <strong>This issue has not been judicially decided in Singapore on analogous facts. Until it is, Meridian faces a binary outcome: either S$0 tax (s13(1)(za) applies) or S$1,360,000+ tax (S$8M deemed income × 17% at standard rate).</strong></p></div>
+</div>
+
+<!-- ══════════════ ISSUE 15 ══════════════ -->
+<div class="issue-wrap case-section" id="i15">
+  <div class="issue-hdr"><span class="issue-num-badge">ISSUE 15 · WHT+PIT</span><div><div class="issue-title">Non-Resident French Director Fees — WHT 22%, No DTA Reduction, A Very Common Error</div><div class="issue-sub">ITA s45(4) · SG-France DTA Art. 16 vs Art. 15 · 183-Day Exemption NOT applicable</div></div></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Lesson Foundation:</strong> This applies <strong>§02 Tax Structure</strong> (WHT — director fees at 22%) and critically <strong>§01 Reading Step 2</strong> (always read the charging provision precisely — Art. 16 of DTAs is a distinct provision from Art. 15 Employment and does not contain the 183-day exemption). The common mistake is conflating the Art. 15 "short-stay" exemption with Art. 16 director fees. This misreading has cost Meridian S$26,400 in WHT plus penalties.</div></div>
+  <div class="calc"><span class="lbl">// WHT — Non-Resident Director Fees (ITA s45(4))</span>
+<span class="k">Director_Fees</span>          = <span class="n">120,000</span>
+<span class="k">WHT_Rate</span>               = <span class="n">22%</span>         <span class="c">// ITA s45(4) — current PIT top rate</span>
+<span class="k">WHT_Required</span>           = <span class="n">120,000</span> <span class="op">×</span> <span class="n">22%</span>   = <span class="res">S$26,400</span>
+
+<span class="c">// SG-France DTA Art. 16: "Directors' fees paid by a SG-resident company to a France-resident director"</span>
+<span class="c">// Art. 16 PRESERVES Singapore's right to tax — NO reduction in WHT rate</span>
+<span class="c">// The 183-day exemption (DTA Art. 15) does NOT apply to director fees (Art. 15 ≠ Art. 16)</span>
+<span class="k">DTA_Benefit</span>            = <span class="res">NONE</span>        <span class="c">// Art. 16 is an exception to Art. 15 short-stay exemption</span>
+
+<span class="c">// Meridian's failure to withhold — cascading consequences</span>
+<span class="k">Unpaid_WHT</span>             = <span class="n">26,400</span>
+<span class="k">Surcharge_ITA_s45(4)</span>   = <span class="n">26,400</span> <span class="op">×</span> <span class="n">5%</span>    = <span class="n">1,320</span>
+<span class="k">Late_Interest_Est</span>      = <span class="n">26,400</span> <span class="op">×</span> <span class="n">8%</span>    = <span class="n">2,112</span>
+<span class="k">Total_Exposure_Issue15</span> = <span class="n">26,400</span> <span class="op">+</span> <span class="n">1,320</span> <span class="op">+</span> <span class="n">2,112</span> = <span class="res">S$29,832</span>
+
+<span class="c">// Additional: deductibility of director fees (ITA s14(1)(a))</span>
+<span class="c">// May be denied until WHT is properly remitted (ITA s45(5))</span></div>
+</div>
+
+<!-- ══════════════ PART VI — SYNTHESIS ══════════════ -->
+<div class="part-hdr both-section" id="partVI">
+  <div class="ph-num">PART VI · SYNTHESIS & INTEGRATION</div>
+  <h2>Consolidated Tax Workings, VN Comparison, Dilemmas & Assessment</h2>
+</div>
+
+<!-- ══════════════ CONSOLIDATED WORKINGS ══════════════ -->
+<div class="sec both-section" id="consolidated">
+  <span class="sec-num">§ Synthesis · Consolidated</span>
+  <h3>Meridian Group — Full Tax Exposure Matrix</h3>
+  <div class="sec-rule"></div>
+  <div class="lesson-bridge"><span class="lb-icon">📚</span><div><strong>Integration Point:</strong> This table synthesises all fifteen issues and maps each to its relevant lesson section. Reading across the matrix shows how every lesson concept manifests in real-world tax exposure. The "Lesson" column is your study reference for each issue.</div></div>
+  <table class="tbl">
+    <tr><th>#</th><th>Issue</th><th>Tax Type</th><th>IRAS Exposure</th><th>Best Case</th><th>Risk</th><th>Lesson §</th></tr>
+    <tr><td>1</td><td>Pioneer vs Pillar 2</td><td>CIT+BEPS</td><td class="nc neg">S$2,700,000</td><td class="nc pos">S$1,800,000</td><td><span class="tag tag-r">HIGH</span></td><td><span class="prov">§03,04</span></td></tr>
+    <tr><td>2</td><td>Property gain</td><td>CIT+SSD</td><td class="nc neg">S$1,109,860</td><td class="nc pos">S$930,000</td><td><span class="tag tag-r">HIGH</span></td><td><span class="prov">§02,04</span></td></tr>
+    <tr><td>3</td><td>Non-deductibles</td><td>CIT</td><td class="nc neg">S$342,975</td><td class="nc neg">S$201,750</td><td><span class="tag tag-r">CERTAIN</span></td><td><span class="prov">§04</span></td></tr>
+    <tr><td>4</td><td>Mgmt fee + WHT</td><td>CIT+WHT</td><td class="nc neg">S$81,600+</td><td class="nc pos">S$48,000</td><td><span class="tag tag-r">HIGH</span></td><td><span class="prov">§02,05</span></td></tr>
+    <tr><td>5</td><td>GST mixed supply</td><td>GST</td><td class="nc neg">S$264,050 blocked</td><td class="nc">N/A</td><td><span class="tag tag-gold">MED</span></td><td><span class="prov">§06</span></td></tr>
+    <tr><td>6</td><td>OVR double GST</td><td>GST</td><td class="nc neg">S$25,200</td><td class="nc pos">S$0</td><td><span class="tag tag-gold">MED</span></td><td><span class="prov">§07</span></td></tr>
+    <tr><td>7</td><td>ABSD 65%</td><td>SDA</td><td class="nc neg">S$2,673,100</td><td class="nc neg">S$2,673,100</td><td><span class="tag tag-r">CERTAIN</span></td><td><span class="prov">§02,06</span></td></tr>
+    <tr><td>8</td><td>AV dispute</td><td>PTA+ITA</td><td class="nc neg">S$48,000/yr</td><td class="nc pos">S$35,000/yr</td><td><span class="tag tag-gold">MED</span></td><td><span class="prov">§02</span></td></tr>
+    <tr><td>9</td><td>Royalty WHT+TP</td><td>WHT+CIT</td><td class="nc neg">S$180,000+</td><td class="nc pos">S$144,000</td><td><span class="tag tag-r">HIGH</span></td><td><span class="prov">§03,04</span></td></tr>
+    <tr><td>10</td><td>TP intra-group loan</td><td>CIT TP</td><td class="nc neg">S$92,400</td><td class="nc pos">S$0 (docs)</td><td><span class="tag tag-r">HIGH</span></td><td><span class="prov">§07</span></td></tr>
+    <tr><td>11</td><td>Treaty shopping</td><td>WHT multi</td><td class="nc neg">Material WHT denial</td><td class="nc pos">Preserved w/ substance</td><td><span class="tag tag-r">HIGH</span></td><td><span class="prov">§03,04</span></td></tr>
+    <tr><td>12</td><td>Crypto gains</td><td>CIT</td><td class="nc neg">≈S$459,000</td><td class="nc pos">S$0 (capital)</td><td><span class="tag tag-gold">MED-HIGH</span></td><td><span class="prov">§07</span></td></tr>
+    <tr><td>13</td><td>Platform worker CPF</td><td>CPF+ITA</td><td class="nc neg">S$1,008,000/yr</td><td class="nc pos">TBD</td><td><span class="tag tag-gold">MED</span></td><td><span class="prov">§07</span></td></tr>
+    <tr><td>14</td><td>Dividend strip</td><td>CIT s33</td><td class="nc neg">≈S$1,360,000</td><td class="nc pos">S$0</td><td><span class="tag tag-r">HIGH</span></td><td><span class="prov">§04</span></td></tr>
+    <tr><td>15</td><td>Director fees WHT</td><td>WHT</td><td class="nc neg">S$29,832</td><td class="nc neg">S$29,832</td><td><span class="tag tag-r">CERTAIN</span></td><td><span class="prov">§02,05</span></td></tr>
+    <tfoot>
+      <tr><td colspan="3"><strong>TOTAL ESTIMATED EXPOSURE</strong></td><td class="nc neg"><strong>≈S$10.4M+</strong></td><td class="nc pos"><strong>≈S$6.1M</strong></td><td colspan="2"></td></tr>
+    </tfoot>
+  </table>
+  <div class="calc"><span class="lbl">// CONSOLIDATED CIT — Meridian Holdings (FY 2024, Simplified)</span>
+<span class="c">// FinTech income (Pioneer 10%)</span>
+<span class="k">CI_Pioneer</span>           = <span class="n">18,000,000</span> <span class="op">+</span> <span class="n">2,017,500</span>  <span class="c">// base + non-deductible add-backs</span>
+                      ≈ <span class="n">20,017,500</span>
+<span class="k">CIT_Pioneer_10%</span>      = <span class="n">20,017,500</span> <span class="op">×</span> <span class="n">10%</span>  = <span class="res">S$2,001,750</span>
+
+<span class="c">// Non-FinTech income (standard 17%)</span>
+<span class="k">Property_Gain</span>        = <span class="n">1,058,000</span>
+<span class="k">Crypto_Gains</span>         = <span class="n">2,300,000</span>
+<span class="k">DeFi_Yield</span>           = <span class="n">180,000</span>
+<span class="k">Rental_Net</span>           = <span class="n">332,000</span>
+<span class="k">TP_Interest_Uplift</span>   = <span class="n">420,000</span>    <span class="c">// s34D adjustment</span>
+<span class="k">CI_Standard</span>          = <span class="n">4,290,000</span>
+<span class="k">CIT_Standard_17%</span>     = <span class="n">4,290,000</span> <span class="op">×</span> <span class="n">17%</span>  = <span class="res">S$729,300</span>
+
+<span class="c">// Pillar Two QDMTT (on Pioneer income)</span>
+<span class="k">ETR_Pioneer_Stream</span>   = <span class="n">10%</span>  →  <span class="fn">MAX</span>(<span class="n">15%</span><span class="op">-</span><span class="n">10%</span>,<span class="n">0</span>) = <span class="n">5%</span> top-up
+<span class="k">QDMTT</span>                = <span class="n">18,000,000</span> <span class="op">×</span> <span class="n">5%</span>   = <span class="res">S$900,000</span>
+
+<span class="k">TOTAL_CIT_EXPOSURE</span>   = <span class="n">2,001,750</span> <span class="op">+</span> <span class="n">729,300</span> <span class="op">+</span> <span class="n">900,000</span> = <span class="res">S$3,631,050</span>
+<span class="c">// Plus: WHT S$108K+, SSD S$930K, ABSD S$2,673K, Property Tax S$48K</span>
+<span class="res">// ALL-IN SINGAPORE TAX BURDEN (estimated): S$7.4M+</span></div>
+</div>
+
+<!-- ══════════════ VN COMPARE ══════════════ -->
+<div class="sec lesson-section" id="vn-compare">
+  <span class="sec-num">§ 08 · LESSON+CASE</span>
+  <h2>Vietnam ↔ Singapore Tax System — Full Comparative Bridge</h2>
+  <div class="sec-rule"></div>
+  <table class="tbl">
+    <tr><th>Feature</th><th>🇻🇳 Vietnam</th><th>🇸🇬 Singapore</th><th>Meridian Implication</th></tr>
+    <tr><td>Tax Territory</td><td>Worldwide for residents; territorial for non-residents</td><td>Strictly territorial — only SG-source or remitted foreign income</td><td>Meridian Vietnam's income is outside SG scope unless remitted/sourced in SG (Issues 4, 10)</td></tr>
+    <tr><td>Corporate Rate</td><td>20% standard; 10% preferential</td><td>17% flat; Pioneer 0–10%</td><td>VN charges 20% on Meridian Vietnam; SG charges 10–17% on SG entities</td></tr>
+    <tr><td>Capital Gains</td><td>20% on securities; 25% on property transfer</td><td>No CGT — trading test applies</td><td>Meridian's property gain (Issue 2) is tax-free in SG if capital; taxable in VN at 25% in equivalent structure</td></tr>
+    <tr><td>VAT / GST</td><td>10% standard; 5% reduced; multiple rates</td><td>9% single rate; zero-rated; exempt</td><td>VN has richer rate differentiation; SG's partial exemption (Issue 5) has no VN equivalent — VN uses direct allocation</td></tr>
+    <tr><td>WHT — Management Fees</td><td>FCT: 5% VAT + 10% CIT on gross (Foreign Contractor Tax)</td><td>s45: 17% CIT WHT on gross</td><td>Issue 4: Meridian Vietnam's management fee is subject to SG s45 WHT (17%) when received from SG payer — and VN FCT applies in reverse when SG provides services to VN</td></tr>
+    <tr><td>Anti-Avoidance</td><td>Art. 8 Law on Tax Admin — substance test</td><td>ITA s33 — dominant purpose counterfactual</td><td>Issue 14 (dividend strip): VN GAAR uses substance-over-form; SG GAAR uses counterfactual — different analytical frameworks reaching similar results</td></tr>
+    <tr><td>Transfer Pricing</td><td>Decree 132/2020/ND-CP — arm's length</td><td>ITA s34D — OECD-aligned arm's length</td><td>Issue 10: both jurisdictions apply arm's length; but VN does not grant corresponding adjustment automatically — MAP required</td></tr>
+    <tr><td>Legal Hierarchy</td><td>Constitution → Luật (Law) → Nghị định (Decree) → Thông tư (Circular) → Quyết định (Decision)</td><td>Constitution → Acts → Subsidiary Legislation → IRAS Guidance → Case Law</td><td>VN's Thông tư (Circular) is functionally equivalent to IRAS e-Tax Guide but has stronger quasi-legal status. VN Decree ≈ SG subsidiary legislation in hierarchy.</td></tr>
+    <tr><td>Property Tax</td><td>Non-agricultural land use tax (low, area-based)</td><td>Annual Value based — 4–36% residential</td><td>Issue 8: SG property tax is economically significant and calculated on notional AV, not actual income — no VN equivalent mechanism</td></tr>
+  </table>
+</div>
+
+<!-- ══════════════ DILEMMAS ══════════════ -->
+<div class="sec both-section" id="dilemmas">
+  <span class="sec-num">§ 07 · LESSON + CASE</span>
+  <h2>Singapore's Seven Unresolved Tax Dilemmas — Applied to Meridian</h2>
+  <div class="sec-rule"></div>
+  <div class="box box-unresolved"><div class="box-title">1. BEPS Pillar Two vs Existing Pioneer Certificates (Issue 1)</div><p>Can Singapore constitutionally impose QDMTT on entities holding valid Pioneer certificates? No case law. No advance ruling framework. Singapore's most financially significant unresolved corporate tax question in 2025. <strong>Meridian exposure: S$900,000/year.</strong></p></div>
+  <div class="box box-unresolved"><div class="box-title">2. Dividend Stripping — GAAR Without Specific Provision (Issue 14)</div><p>Does ITA s33 apply to deny the one-tier dividend exemption where shares are acquired specifically to extract accumulated retained earnings tax-free? No Singapore case law on dividend stripping. <strong>Meridian exposure: S$1,360,000 binary risk.</strong></p></div>
+  <div class="box box-unresolved"><div class="box-title">3. Crypto-to-Crypto Swaps — Are They Taxable Disposal Events? (Issue 12)</div><p>Is an ETH→USDC swap a "disposal" triggering gain recognition? IRAS 2020 crypto guide is silent. Every major comparable jurisdiction (UK, Australia, US) treats it as a disposal. Singapore has not stated its position. <strong>Meridian exposure: S$45,000 swap gain unresolved.</strong></p></div>
+  <div class="box box-unresolved"><div class="box-title">4. DeFi Yield Farming — Recognition, Valuation & GST Character (Issue 12)</div><p>When is DeFi income recognised? At what value? Is it a financial service (GST exempt) or a goods supply? No IRAS guidance on DeFi as of 2025. <strong>Meridian exposure: S$120,000 income characterisation risk.</strong></p></div>
+  <div class="box box-unresolved"><div class="box-title">5. Platform Workers CPF — ITA Deductibility Gap (Issue 13)</div><p>PWA 2024 mandates CPF contributions for platform workers; ITA s14(1)(c) allows deduction only for employees. Platform workers are not employees under ITA. <strong>Meridian exposure: up to S$2.6M/year non-deductible from 2029.</strong></p></div>
+  <div class="box box-unresolved"><div class="box-title">6. Double GST on OVR + Reverse Charge (Issue 6)</div><p>Where an overseas vendor is OVR-registered AND a Singapore recipient applies reverse charge — who corrects the double-charge and how? No IRAS correction mechanism published. <strong>Meridian exposure: systematic overpayment of GST on overseas digital services.</strong></p></div>
+  <div class="box box-unresolved"><div class="box-title">7. s33 GAAR Override of DTA Benefits — Vienna Convention Tension (Issue 11)</div><p>Can Singapore invoke domestic GAAR to deny treaty benefits that are validly available under a bilateral DTA? The Vienna Convention on Law of Treaties requires good faith treaty performance. The MLI PPT provides a treaty-level denial mechanism — but s33's application to DTA benefits remains controversial and untested at appellate level.</p></div>
+</div>
+
+<!-- ══════════════ MCQ QUIZ ══════════════ -->
+<div class="sec both-section" id="quiz-sec">
+  <span class="sec-num">§ Assessment · Integrated MCQ</span>
+  <h2>Integrated Assessment — Lessons + Case Study MCQ</h2>
+  <div class="sec-rule"></div>
+  <div style="background:var(--gold-pale);border:1px solid var(--gold-dim);border-radius:6px;padding:14px 18px;margin-bottom:20px;font-family:var(--mono);font-size:.75rem;color:var(--gold2);">
+    🏆 Scoring: Easy <span style="color:#80c49e;">+5pts</span> / Medium <span style="color:var(--gold);">+10pts</span> / Hard <span style="color:#e08080;">+15pts</span> &nbsp;|&nbsp; Wrong: −3 (Easy), −5 (Med/Hard) &nbsp;|&nbsp; Questions marked <span style="background:var(--orange-dim);border-radius:3px;padding:1px 5px;color:var(--orange);">Meridian</span> draw from case facts.
+  </div>
+  <div class="quiz-wrap">
+    <div class="quiz-top">
+      <div class="quiz-top-title">Singapore Tax Law — Integrated Assessment</div>
+      <div class="quiz-stats">Q <span id="qn">1</span>/<span id="qt">20</span> &nbsp; ✓ <span id="qc">0</span> &nbsp; ✗ <span id="qw">0</span> &nbsp; Pts: <span id="qs">0</span></div>
+    </div>
+    <div class="qprog"><div class="qprog-fill" id="qpf" style="width:5%"></div></div>
+    <div class="q-area" id="qarea"></div>
+    <div class="q-nav">
+      <div class="pts-msg" id="ptsmsg"></div>
+      <div style="display:flex;gap:8px;">
+        <button class="btn" id="submitBtn" onclick="submitQ()" style="display:none;">Submit →</button>
+        <button class="btn" id="nextBtn" onclick="nextQ()" style="display:none;">Next →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main-content -->
+</div><!-- end shell -->
+
+<!-- MODAL -->
+<div class="modal-bg" id="scoreModal">
+  <div class="modal">
+    <h2>Assessment Complete</h2>
+    <div class="modal-score" id="finalScore">0</div>
+    <p id="finalMsg"></p>
+    <p style="font-family:var(--mono);font-size:.7rem;color:var(--gold-dim);" id="finalBreak"></p>
+    <button class="btn" onclick="restartQ()" style="margin-right:8px;">Restart</button>
+    <button class="btn" onclick="document.getElementById('scoreModal').classList.remove('show')">Close</button>
+  </div>
+</div>
+
+<script>
+// ══ MODE SYSTEM ══
+function setMode(m) {
+  document.body.className = 'mode-' + m;
+  document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  if (m === 'quiz') {
+    setTimeout(() => document.getElementById('quiz-sec').scrollIntoView({behavior:'smooth'}), 100);
+  }
+}
+
+// ══ TAB SYSTEM ══
+function switchTab(btn, containerId, panelId) {
+  const con = document.getElementById(containerId);
+  con.querySelectorAll('.tab-pnl').forEach(p => p.classList.remove('active'));
+  btn.closest('.sec,.card').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+
+// ══ CALCULATORS ══
+const fmt = n => 'S$' + n.toLocaleString('en-SG', {minimumFractionDigits:2, maximumFractionDigits:2});
+
+document.getElementById('c_type').addEventListener('change', function() {
+  document.getElementById('c_rate_row').style.display = this.value === 'pioneer' ? 'flex' : 'none';
+});
+
+function calcCIT() {
+  const ci = parseFloat(document.getElementById('c_ci').value) || 0;
+  const type = document.getElementById('c_type').value;
+  let tax = 0, notes = '';
+  if (type === 'normal') {
+    const ex1 = Math.min(ci,10000)*0.75, ex2 = Math.min(Math.max(ci-10000,0),190000)*0.50;
+    tax = (ci - ex1 - ex2) * 0.17;
+    notes = `Ex1 (75% of 1st S$10K): ${fmt(ex1)}\nEx2 (50% of next S$190K): ${fmt(ex2)}\nTotal exemption: ${fmt(ex1+ex2)}`;
+  } else if (type === 'startup') {
+    const ex1 = Math.min(ci,100000)*0.75, ex2 = Math.min(Math.max(ci-100000,0),100000)*0.50;
+    tax = (ci - ex1 - ex2) * 0.17;
+    notes = `Startup: 75% of 1st S$100K = ${fmt(ex1)}\n50% of next S$100K = ${fmt(ex2)}`;
+  } else {
+    const r = (parseFloat(document.getElementById('c_rate').value)||10)/100;
+    tax = ci * r; notes = `Incentive rate: ${(r*100).toFixed(1)}% applied`;
+  }
+  const el = document.getElementById('c_out');
+  el.style.display = 'block';
+  el.textContent = `Chargeable Income: ${fmt(ci)}\n${notes}\nTax Payable: ${fmt(tax)}\nEffective Rate: ${ci>0?(tax/ci*100).toFixed(2):'0.00'}%`;
+}
+
+function calcGST() {
+  const it = parseFloat(document.getElementById('g_it').value)||0;
+  const tx = parseFloat(document.getElementById('g_tx').value)||0;
+  const tot = parseFloat(document.getElementById('g_tot').value)||1;
+  const raw = tx/tot;
+  const rounded = Math.ceil(raw*100)/100;
+  const recov = it * rounded;
+  const blocked = it - recov;
+  const dm = Math.min(0.05*it, 12000);
+  const el = document.getElementById('g_out');
+  el.style.display='block';
+  el.textContent = `Raw Ratio: ${(raw*100).toFixed(4)}%\nCEILING to whole %: ${(rounded*100).toFixed(0)}%\nRecoverable Input Tax: ${fmt(recov)}\nBlocked Input Tax: ${fmt(blocked)}\nDe minimis threshold: ${fmt(dm)}\nDe minimis applies? ${blocked<=dm?'✅ YES — full recovery':'❌ No — partial applies'}`;
+}
+
+function calcSD() {
+  const p = parseFloat(document.getElementById('s_price').value)||0;
+  const mv = parseFloat(document.getElementById('s_mv').value)||0;
+  const b = Math.max(p,mv);
+  const absdRates = {sc1:0,sc2:0.20,sc3:0.30,spr1:0.05,spr2:0.30,fg:0.60,entity:0.65};
+  const buyer = document.getElementById('s_buyer').value;
+  const bands = [[180000,.01],[180000,.02],[640000,.03],[500000,.04],[1500000,.05],[Infinity,.06]];
+  let rem=b, bsd=0;
+  for(const [sz,r] of bands){const t=Math.min(rem,sz);bsd+=t*r;rem-=t;if(rem<=0)break;}
+  const absd = b * (absdRates[buyer]||0);
+  const el = document.getElementById('s_out');
+  el.style.display='block';
+  el.textContent = `BSD Basis (MAX of price/MV): ${fmt(b)}\nBSD: ${fmt(bsd)}\nABSD Rate: ${((absdRates[buyer]||0)*100).toFixed(0)}%\nABSD: ${fmt(absd)}\nTOTAL STAMP DUTY: ${fmt(bsd+absd)}\nEffective Rate: ${((bsd+absd)/p*100).toFixed(1)}% of purchase price`;
+}
+
+function calcQDMTT() {
+  const inc = parseFloat(document.getElementById('p_income').value)||0;
+  const tax = parseFloat(document.getElementById('p_tax').value)||0;
+  const etr = inc>0 ? tax/inc : 0;
+  const topUp = Math.max(0.15-etr,0);
+  const qdmtt = inc * topUp;
+  const el = document.getElementById('p_out');
+  el.style.display='block';
+  el.textContent = `ETR: ${(etr*100).toFixed(2)}%\nTop-Up % = MAX(15% - ${(etr*100).toFixed(2)}%, 0) = ${(topUp*100).toFixed(2)}%\nQDMTT: ${fmt(qdmtt)}\nTotal Tax (CIT + QDMTT): ${fmt(tax+qdmtt)}\nCombined ETR: ${inc>0?((tax+qdmtt)/inc*100).toFixed(2):0}%`;
+}
+
+// ══ QUIZ DATA ══
+const questions = [
+  {q:"Under ITA s10(1)(a), a gain is taxable if it has an 'income character'. Which of the following Badges of Trade is considered STRONGEST evidence of a trading (rather than capital) intention?",opts:["The taxpayer's principal business is unrelated to the asset class","The asset was held for more than 3 years","A very short holding period with loan funding and no income use during ownership","The asset was acquired as an unsolicited gift"],ans:2,d:'medium',pts:10,neg:5,src:'Lesson §02 + Issue 2',exp:"A short holding period combined with loan funding and vacant (no income-producing) use are the most powerful Badges of Trade. Courts in BFC v CIT [2013] SGCA and AQP v CIT applied these as primary indicators. The unrelated principal business is a counter-indicator but is easily overridden by strong income-character badges."},
+  {q:"In the Meridian case study, Meridian Fintech makes both standard-rated SaaS supplies (S$8M including zero-rated exports) and exempt financial service supplies (S$7.7M). Using the CEILING function, what is the rounded taxable supply ratio used for GST partial exemption purposes?",opts:["50%","51%","49%","55%"],ans:1,d:'hard',pts:15,neg:5,src:'Issue 5 + Lesson §06',exp:"Raw ratio = 8,000,000 / 15,700,000 = 50.9554%. Applying CEILING to the nearest whole percentage: CEILING(50.9554, 1) = 51%. Zero-rated exports count as taxable supplies in the numerator — they are taxable supplies charged at 0%, not exempt supplies."},
+  {q:"Meridian PropCo (a Singapore company) purchases a residential property for S$3,800,000. The market value is S$3,850,000. What is the correct ABSD basis under SDA s22C?",opts:["S$3,800,000 (purchase price)","S$3,825,000 (average of price and MV)","S$3,850,000 (MAX of price and MV)","S$3,800,000 (price takes precedence)"],ans:2,d:'medium',pts:10,neg:5,src:'Issue 7 + Lesson §06',exp:"SDA s22C: ABSD is charged on the HIGHER of purchase price or market value. MAX(S$3,800,000, S$3,850,000) = S$3,850,000. At 65% ABSD (corporate entity), this produces S$2,502,500 in ABSD alone. Using purchase price instead of MV would understate the ABSD by S$32,500."},
+  {q:"Under Singapore's one-tier corporate tax system (ITA s13(1)(za)), dividends received from a Singapore company are exempt in the recipient's hands. Which provision allows IRAS to potentially override this exemption in an anti-avoidance scenario?",opts:["ITA s14(1)(a) — wholly and exclusively test","ITA s15(1)(b) — private/domestic prohibition","ITA s33 — General Anti-Avoidance Rule (GAAR)","ITA s49 — DTA override provision"],ans:2,d:'hard',pts:15,neg:5,src:'Issue 14 + Lesson §04',exp:"ITA s33 is Singapore's GAAR. Under the CIT v AQQ [2014] SGCA counterfactual test, if an arrangement (including a dividend receipt) would not have been entered into but for the tax benefit, IRAS can disregard or vary it. This is the basis for challenging dividend stripping, even though s13(1)(za) expressly exempts the dividend. s33 operates as an override of specific provisions including s13 exemptions."},
+  {q:"Meridian Holdings pays director fees of S$120,000 to Isabelle Fontaine, a French national non-resident, who attends only 12 days of board meetings in Singapore. Does the Singapore-France DTA 183-day exemption (typically found in Art. 15 Employment Income) reduce the WHT rate on these director fees?",opts:["Yes — 12 days well below 183 days, so WHT is waived entirely","Yes — DTA Art. 15 reduces the rate to 5%","No — DTA Art. 16 (Director Fees) preserves Singapore's right to tax at domestic rates regardless of days present","No — director fees are exempt from WHT under ITA s13"],ans:2,d:'hard',pts:15,neg:5,src:'Issue 15 + Lesson §02',exp:"DTA Art. 16 (Director Fees) is a distinct provision from Art. 15 (Employment Income). Art. 15 contains the 183-day short-stay exemption. Art. 16 does NOT contain this exemption — it expressly preserves the source country (Singapore's) right to tax director fees from a Singapore-resident company, regardless of the number of days the director is present in Singapore. WHT at 22% applies in full."},
+  {q:"Under the Singapore legal hierarchy, which principle governs when two Acts of Parliament — a specific tax statute and a general commercial law — conflict?",opts:["Lex posterior — the later statute always prevails","Lex superior — Parliament's constitutional taxing power always wins","Lex specialis — the specific tax statute prevails over the general commercial law","Lex communis — international treaties always override domestic Acts"],ans:2,d:'medium',pts:10,neg:5,src:'Lesson §03',exp:"Lex specialis derogat legi generali: specific legislation overrides general legislation. The ITA as a specific tax statute prevails over, say, the Companies Act in matters of income characterisation. This is why a payment classified as a return of capital under the Companies Act can still be taxable income under ITA s10(1)."},
+  {q:"Which of the following Meridian expenses is NON-DEDUCTIBLE under ITA s15(1)(f) specifically (not s15(1)(b) or (c))?",opts:["S$350,000 Sentosa Cove Club membership","S$400,000 goodwill amortisation","S$120,000 MAS regulatory fine","S$28,000 CEO spouse travel expenses"],ans:2,d:'easy',pts:5,neg:3,src:'Issue 3 + Lesson §04',exp:"ITA s15(1)(f) disallows penalties, fines, and sums recoverable under written law. The MAS fine (S$120,000) is imposed under the Payment Services Act — a written law — making it non-deductible under s15(1)(f). The club membership and CEO travel are s15(1)(b) (private/domestic). Goodwill amortisation is s15(1)(c) (capital expenditure). Only the fine is correctly classified under s15(1)(f)."},
+  {q:"In computing the QDMTT (Qualifying Domestic Minimum Top-Up Tax) for Meridian Holdings under the BEPS Act 2024, what is the correct formula for the Top-Up Percentage?",opts:["Top-Up% = ETR − 15%","Top-Up% = MAX(15% − ETR, 0)","Top-Up% = MIN(15%, ETR)","Top-Up% = 15% × (1 − ETR)"],ans:1,d:'medium',pts:10,neg:5,src:'Issue 1 + Lesson §06',exp:"The correct formula under the GloBE Rules is MAX(15% − ETR, 0). If the ETR is already 15% or above, the top-up is 0 (hence the MAX function preventing negative values). For Meridian at ETR of 10%, Top-Up% = MAX(15% − 10%, 0) = 5%. QDMTT = GloBE Income × 5% = S$18M × 5% = S$900,000."},
+  {q:"Meridian Fintech pays royalties to Meridian UK (a UK IP holding company with no UK staff or substance). Under the Singapore-UK DTA Art. 12, the reduced WHT rate of 8% applies only if Meridian UK is the 'beneficial owner' of the royalties. Meridian UK has no UK operations and is managed from Singapore. What is the most likely outcome?",opts:["8% DTA rate applies — Meridian UK is the legal owner, which is sufficient","8% DTA rate applies — Singapore-UK DTA is binding regardless of substance","8% DTA rate is denied — Meridian UK is not the beneficial owner; domestic 10% rate applies","0% WHT applies — royalties between related parties are exempt"],ans:2,d:'hard',pts:15,neg:5,src:'Issue 9 + Lesson §03',exp:"'Beneficial owner' under OECD Commentary Art. 12 requires more than legal title — the recipient must have the right to use and enjoy the royalties without being obliged to pass them on. Meridian UK with no UK substance, no employees, and Singapore management effectively does not independently control the royalty income. Additionally, the MLI Principal Purpose Test (Art. 7) may independently deny the DTA benefit. The domestic 10% rate applies."},
+  {q:"Under ITA s14C, when is a provision for doubtful debts deductible for Singapore corporate income tax purposes?",opts:["Any IFRS-compliant Expected Credit Loss provision is fully deductible","Only a specific provision for identified, individually doubtful debts is deductible","General provisions (e.g. 2% of debtors) are deductible if based on historical write-off data","All provisions for doubtful debts are non-deductible — only written-off bad debts qualify"],ans:1,d:'medium',pts:10,neg:5,src:'Issue 3 + Lesson §04',exp:"ITA s14C allows deductions for specific provisions — where individual debts are identified as doubtful or bad based on evidence of impairment. General statistical provisions based on portfolio-level ECL models (as required by IFRS 9) do not qualify. Meridian's S$200,000 general provision is non-deductible. Only provisions for specific, named debtors with documented evidence of impairment qualify."},
+  {q:"Meridian Gig makes CPF contributions for platform workers under the Platform Workers Act 2024. Under ITA s14(1)(c), CPF contributions are deductible by the employer. However, platform workers are classified as self-employed under ITA. What is the deductibility consequence?",opts:["Fully deductible — PWA 2024 creates a new deductible category by implication","Deductible only if Meridian elects to treat workers as employees for all ITA purposes","The deductibility is legally uncertain — ITA s14(1)(c) requires 'employees'; platform workers may not qualify","Deductible at 50% under the general revenue expenses rule in s14(1)(a)"],ans:2,d:'hard',pts:15,neg:5,src:'Issue 13 + Lesson §04',exp:"ITA s14(1)(c) specifically allows deductions for CPF contributions 'in respect of employees'. Platform workers under PWA 2024 (MOM) are not classified as employees under ITA — they remain self-employed for tax purposes. The ITA has not been amended to accommodate the PWA category. This creates genuine legal uncertainty: the PWA creates a CPF obligation (like an employer) but the ITA deductibility requires an employment relationship that does not legally exist under ITA. This is an unresolved legislative gap."},
+  {q:"In comparing Vietnam's Foreign Contractor Tax (FCT) with Singapore's s45 Withholding Tax, which statement correctly identifies a key structural difference?",opts:["Vietnam FCT is collected from the foreign contractor; Singapore s45 WHT is collected from the Singapore payer","Vietnam FCT is collected at a lower rate than Singapore WHT in all cases","Singapore WHT applies to Vietnamese residents only; FCT applies to Singapore residents only","Vietnam FCT and Singapore s45 WHT both apply only to employment income"],ans:0,d:'hard',pts:15,neg:5,src:'Issue 4 + Lesson §08',exp:"Vietnam's FCT is structured as a collection mechanism where the Vietnamese payer must withhold and remit tax on behalf of the foreign contractor (overseas supplier). Singapore's s45 WHT follows the same payor-withholding mechanism — the Singapore payer withholds from the payment to the non-resident. The key structural difference is in the combined nature of Vietnam's FCT (both a VAT-equivalent and a CIT-equivalent combined), whereas Singapore's s45 is purely a CIT-equivalent withholding mechanism."},
+  {q:"IRAS e-Tax Guides are published interpretations of Singapore tax law. What is their legal status and binding force?",opts:["Fully binding on both taxpayers and courts — equivalent to subsidiary legislation","Binding on IRAS through legitimate expectation doctrine, but not binding on courts","Purely advisory with no legal significance","Binding only on taxpayers who have specifically relied on them in writing"],ans:1,d:'medium',pts:10,neg:5,src:'Lesson §03',exp:"IRAS e-Tax Guides represent IRAS's interpretation of the law and are not legally binding on courts. Courts can and occasionally do deviate from IRAS guidance. However, the legitimate expectation doctrine means IRAS is generally bound by its own published guidance — a taxpayer who acts in good faith on a Guide may have a legitimate expectation that IRAS will apply that interpretation. Advance rulings under ITA s108 provide stronger binding force for specific transactions."},
+  {q:"Meridian Holdings advances S$10M to its Vietnam subsidiary at 2% interest p.a., when the arm's length rate (Singapore SORA + credit risk) is approximately 6.2%. Under ITA s34F, what surcharge applies if Meridian has no contemporaneous transfer pricing documentation?",opts:["No surcharge — TP adjustments are penalties-free in Singapore","5% surcharge on the TP income adjustment amount","10% surcharge on the total loan principal","20% surcharge on the underpaid tax amount"],ans:1,d:'hard',pts:15,neg:5,src:'Issue 10 + Lesson §07',exp:"ITA s34F imposes a 5% surcharge on the amount of the transfer pricing adjustment if the taxpayer does not have contemporaneous TP documentation. For Meridian: adjustment = S$420,000 (arm's length S$620K less actual S$200K); surcharge = 5% × S$420,000 = S$21,000. This is an additional penalty on top of the tax on the adjusted income. The surcharge incentivises preparation of proper TP documentation before filing."},
+  {q:"Singapore's property tax Annual Value (AV) is defined in PTA s2 as the gross amount at which a property can reasonably be expected to be let. Meridian PropCo's property has an IRAS-assessed AV of S$480,000 but actual rent of S$380,000 (locked in by a 2021 lease). What are Meridian's options?",opts:["Accept the S$480K AV — actual rent is irrelevant to property tax","Object to the AV under PTA s20A within 30 days, submitting evidence of actual market rent","Request IRAS to use actual rent as the basis under ITA s10(1)(f)","The actual rent and AV must be the same under Singapore law — no dispute is possible"],ans:1,d:'medium',pts:10,neg:5,src:'Issue 8 + Lesson §02',exp:"PTA s20A allows a taxpayer to object to the Annual Value within 30 days of IRAS's Valuation Notice. Evidence would include independent valuation reports, comparable market transactions, and data on current market rents. The AV is a notional market rent concept — it is not automatically equal to actual rent. If the AV objection fails, the taxpayer can appeal to the Valuation Review Board. Importantly, property tax is based on AV (notional) while income tax is based on actual rent — the two are independently determined."},
+  {q:"The MLI Multilateral Instrument's Principal Purpose Test (PPT) under Article 7 can deny treaty benefits. In the Meridian context, which entity arrangement is MOST vulnerable to a PPT challenge?",opts:["Meridian Holdings (Singapore) — it has a large team and genuine FinTech operations","Meridian Vietnam Co. Ltd. — it has Vietnamese staff and local operations","Meridian UK Holdings Ltd. — it holds IP with no UK staff and is managed from Singapore","Meridian Gig Pte. Ltd. — platform workers are based across multiple countries"],ans:2,d:'hard',pts:15,neg:5,src:'Issue 9,11 + Lesson §03',exp:"The PPT test asks: was obtaining the DTA treaty benefit a principal purpose of the arrangement? Meridian UK is a bare IP holding company with no UK staff, no UK substance, and all decisions made from Singapore. Its sole function is to hold IP and receive royalties from Meridian Fintech — qualifying for the SG-UK DTA Art. 12 reduced 8% WHT rate. This is a paradigmatic treaty shopping structure that fails the PPT test. Meridian Holdings (Singapore) has genuine substance and is much more defensible."},
+  {q:"Under Singapore's territorial taxation principle, which of the following Meridian transactions is most clearly OUTSIDE Singapore's taxing jurisdiction under ITA s10(1)?",opts:["S$2.3M from crypto trading gains realised by a Singapore-incorporated subsidiary","S$480,000 management fee received by Meridian Vietnam from Meridian Holdings","S$1.8M royalties paid by Meridian Fintech (Singapore) to Meridian UK","S$8.4M commissions paid by Meridian Gig (Singapore) to platform workers"],ans:1,d:'medium',pts:10,neg:5,src:'Lesson §02',exp:"Singapore taxes income accruing in or derived from Singapore (ITA s10(1)). The S$480,000 management fee is received by Meridian Vietnam Co. Ltd. — a Vietnamese entity. This income is sourced in Vietnam (services provided from Vietnam) and received by a Vietnamese entity. It is outside Singapore's taxing jurisdiction entirely. The other three transactions all involve Singapore-incorporated entities or Singapore-sourced income."},
+  {q:"For purposes of the GST partial exemption de minimis test, what is the correct threshold formula?",opts:["De minimis applies if blocked input tax ≤ S$1,000/month","De minimis applies if blocked input tax ≤ MIN(5% of total input tax, S$12,000 per year)","De minimis applies if taxable supplies are more than 50% of total supplies","De minimis applies if total blocked input tax ≤ S$50,000 per year"],ans:1,d:'hard',pts:15,neg:5,src:'Issue 5 + Lesson §06',exp:"The de minimis rule under GST Act s26(4): fully exempt input tax recovery applies if the non-attributable (blocked) input tax does not exceed the LOWER of: (a) 5% of total input tax, OR (b) S$1,000 per month = S$12,000 per year. The formula is MIN(5% × total input tax, S$12,000). For Meridian Fintech, MIN(S$31,000, S$12,000) = S$12,000 threshold. Blocked IT of S$264,050 >> S$12,000, so de minimis does not apply."},
+  {q:"Meridian Holdings' CEO, Marcus Tan (Singapore Citizen), receives S$65,000 personal income tax paid by the company on his behalf. Which TWO tax consequences arise simultaneously?",opts:["(i) Deductible for Meridian under s14(1)(a); (ii) Not taxable to Marcus as it's a tax payment","(i) Non-deductible for Meridian under s15(1)(b); (ii) Taxable benefit-in-kind to Marcus under s10(1)(b)","(i) Non-deductible under s15(1)(f) as a penalty; (ii) Employer's CPF obligation is triggered","(i) Deductible as employment cost under s14(1)(c); (ii) Exempt as employer contribution"],ans:1,d:'medium',pts:10,neg:5,src:'Issue 3 + Lesson §04',exp:"Two simultaneous consequences: (1) The S$65,000 is non-deductible by Meridian under ITA s15(1)(b) — it is not Meridian's own tax liability; paying someone else's personal tax is a private/domestic expense. (2) The S$65,000 is a taxable benefit-in-kind to Marcus under s10(1)(b) — he has received an employment benefit equal to S$65,000 (his personal tax was paid for him). Meridian must report this on his IR8A; failure to do so risks under-reporting penalties under ITA s94."},
+  {q:"Which of the following correctly describes the relationship between IRAS's Transfer Pricing surcharge (ITA s34F) and the requirement for contemporaneous TP documentation?",opts:["The surcharge applies to the total transaction value regardless of documentation","The surcharge (5%) applies to the TP adjustment amount only if contemporaneous documentation does NOT exist at the time of filing","The surcharge is waived if the taxpayer is a Pioneer Status holder","The surcharge applies to all related-party transactions above S$1M regardless of documentation"],ans:1,d:'hard',pts:15,neg:5,src:'Issue 10 + Lesson §07',exp:"ITA s34F imposes a 5% surcharge specifically on the transfer pricing adjustment amount — but only if the taxpayer did not prepare contemporaneous TP documentation. 'Contemporaneous' means the documentation must be prepared at the time of, or reasonably close to, the related-party transaction — not retrospectively when IRAS challenges. Proper contemporaneous documentation is therefore the key risk-mitigation tool. For Meridian's S$10M loan, proper documentation (CUP method benchmarking, credit analysis, financial model) would eliminate the s34F surcharge exposure of S$21,000."},
+];
+
+let qIdx=0, totalScore=0, gScore=0, correct=0, wrong=0, selOpt=null, answered=false, gAnswered=0;
+
+function renderQ() {
+  const q = questions[qIdx];
+  const dc = {easy:'background:rgba(74,140,106,.15);color:#80c49e;border:1px solid rgba(74,140,106,.3)',medium:'background:rgba(201,168,76,.12);color:var(--gold2);border:1px solid var(--gold-dim)',hard:'background:rgba(196,75,75,.15);color:#e08080;border:1px solid rgba(196,75,75,.3)'};
+  const dm = {easy:'🟢 Easy +5pts',medium:'🟡 Medium +10pts',hard:'🔴 Hard +15pts'};
+  document.getElementById('qarea').innerHTML = `
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+      <span style="font-family:var(--mono);font-size:.58rem;padding:3px 8px;border-radius:3px;${dc[q.d]}">${dm[q.d]}</span>
+      <span class="q-source-tag">${q.src}</span>
+    </div>
+    <div class="q-text">${q.q}</div>
+    <div class="opts" id="optsDiv">
+      ${q.opts.map((o,i)=>`<button class="opt" onclick="selOpt_(${i})" id="opt${i}"><span class="opt-ltr">${'ABCD'[i]}</span>${o}</button>`).join('')}
+    </div>
+    <div class="explain" id="expDiv"><strong>Explanation:</strong> ${q.exp}</div>
+  `;
+  selOpt=null; answered=false;
+  document.getElementById('submitBtn').style.display='none';
+  document.getElementById('nextBtn').style.display='none';
+  const pm = document.getElementById('ptsmsg'); pm.style.display='none';
+  document.getElementById('qpf').style.width=((qIdx+1)/questions.length*100)+'%';
+  document.getElementById('qn').textContent=qIdx+1;
+}
+
+function selOpt_(i) {
+  if(answered) return;
+  selOpt=i;
+  document.querySelectorAll('.opt').forEach((b,idx)=>{
+    b.style.borderColor = idx===i ? 'var(--gold)' : 'var(--border)';
+    b.style.background = idx===i ? 'var(--gold-pale)' : 'var(--surface)';
+    b.querySelector('.opt-ltr').style.borderColor = idx===i ? 'var(--gold)' : 'var(--border)';
+  });
+  document.getElementById('submitBtn').style.display='inline-block';
+}
+
+function submitQ() {
+  if(selOpt===null||answered) return;
+  answered=true;
+  const q=questions[qIdx];
+  const ok=selOpt===q.ans;
+  const pts=ok?q.pts:-q.neg;
+  totalScore+=pts; gScore+=pts;
+  if(ok) correct++; else wrong++;
+  gAnswered++;
+  document.querySelectorAll('.opt').forEach((b,i)=>{
+    b.disabled=true;
+    if(i===q.ans) b.classList.add('correct');
+    else if(i===selOpt&&!ok) b.classList.add('wrong');
+  });
+  document.getElementById('expDiv').style.display='block';
+  const pm=document.getElementById('ptsmsg');
+  pm.style.display='block'; pm.className='pts-msg '+(ok?'pts-pos':'pts-neg');
+  pm.textContent=ok?`+${pts} pts`:`${pts} pts`;
+  document.getElementById('qs').textContent=totalScore;
+  document.getElementById('qc').textContent=correct;
+  document.getElementById('qw').textContent=wrong;
+  document.getElementById('gscore').textContent=Math.max(0,gScore);
+  document.getElementById('gans').textContent=gAnswered;
+  document.getElementById('submitBtn').style.display='none';
+  if(qIdx<questions.length-1) {
+    document.getElementById('nextBtn').style.display='inline-block';
+  } else {
+    const fb=document.createElement('button');
+    fb.className='btn';fb.textContent='See Results →';fb.onclick=showResults;
+    document.querySelector('.q-nav').appendChild(fb);
+  }
+}
+
+function nextQ(){qIdx++;renderQ();}
+
+function showResults(){
+  const pct=(correct/questions.length*100).toFixed(0);
+  const msgs=[[0,'Keep studying — revisit the lesson sections and retry.'],[40,'Good foundation. Focus on the conflict/priority and international tax sections.'],[60,'Solid! Review the harder transfer pricing and GAAR questions.'],[80,'Strong performance — excellent integration of lesson and case study.'],[95,'⚖ Outstanding. Near-mastery of Singapore tax law.']];
+  let msg=msgs[0][1];
+  for(const [t,m] of msgs){if(parseInt(pct)>=t) msg=m;}
+  document.getElementById('finalScore').textContent=totalScore+' pts';
+  document.getElementById('finalMsg').textContent=msg;
+  document.getElementById('finalBreak').textContent=`${correct} correct / ${wrong} wrong / ${questions.length} questions | ${pct}% accuracy`;
+  document.getElementById('scoreModal').classList.add('show');
+}
+
+function restartQ(){
+  qIdx=0;totalScore=0;correct=0;wrong=0;selOpt=null;answered=false;
+  document.getElementById('scoreModal').classList.remove('show');
+  document.getElementById('qs').textContent=0;
+  document.getElementById('qc').textContent=0;
+  document.getElementById('qw').textContent=0;
+  renderQ();
+}
+
+// ══ SIDEBAR ACTIVE ══
+const allSecs = document.querySelectorAll('[id]');
+const sLinks = document.querySelectorAll('#sidebar a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  allSecs.forEach(s=>{if(s.id&&window.scrollY>=s.offsetTop-80)cur=s.id;});
+  sLinks.forEach(l=>{l.classList.remove('active');if(l.getAttribute('href')==='#'+cur)l.classList.add('active');});
+});
+
+renderQ();
+</script>
+</body>
+</html>
